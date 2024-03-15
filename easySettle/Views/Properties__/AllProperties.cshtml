@@ -1,0 +1,24 @@
+﻿@model IEnumerable<easySettle.Models.Properties>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List of properties</h1>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="map-container">
+                <iframe class="w-100 h-100"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99555.33599667415!2d-123.1216446!3d49.2827291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673f143a94fb7%3A0xbc0c31d5a78ddd8f!2sVancouver%2C%20BC!5e0!3m2!1sen!2sca!4v1694259649153!5m2!1sen!2sca"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <partial name="PropertiesList" />
+         </div>
+    </div>
+</div>

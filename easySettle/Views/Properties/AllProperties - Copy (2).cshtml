@@ -1,0 +1,71 @@
+﻿@model IEnumerable<easySettle.Models.Properties>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List of properties</h1>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="map-container">
+               <div id="map" style="height: 100%;"></div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <partial name="PropertiesList" />
+         </div>
+    </div>
+</div>
+<script>
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 49.2075401, lng: -122.9038507 },
+            zoom: 11
+        });
+
+        var properties = @Html.Raw(Json.Serialize(Model));
+        for (var i = 0; i < properties.length; i++) {
+            var marker = new google.maps.Marker({
+                position: { lat: parseFloat(properties[i].Lat), lng: parseFloat(properties[i].Lon) },
+                map: map,
+                title: properties[i].Name,
+                animation: google.maps.Animation.DROP  // Set the initial animation
+            });
+
+            // Optionally, you can add an info window for more details
+            var infowindow = new google.maps.InfoWindow({
+                content: '<strong>' + properties[i].Name + '</strong><br>' +
+                    'Latitude: ' + properties[i].Lat + '<br>' +
+                    'Longitude: ' + properties[i].Lon + '<br>' +
+                    'Description: ' + properties[i].Description
+            });
+
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
+
+            // Add a listener for the animation end to prevent continuous bouncing
+            marker.addListener('animation_end', function () {
+                marker.setAnimation(null);
+            });
+        }
+    }
+
+    function loadGoogleMapsScript() {
+        var script = document.createElement('script');
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC-mAndBySKKnYRgtMiayzZ1eUr5cBj0Qg&callback=initMap';
+        script.async = true;  // Use async attribute
+
+        // Use 'defer' attribute as recommended for optimal performance
+        script.defer = true;
+
+        document.head.appendChild(script);
+    }
+
+    window.onload = loadGoogleMapsScript;
+</script>
+

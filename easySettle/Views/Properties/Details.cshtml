@@ -1,0 +1,160 @@
+﻿ @model easySettle.Models.Properties
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <br />
+   
+    <!-- First Card with Gallery -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <div class="float-right">
+                <h4>@Html.DisplayNameFor(model => model.RentPrice): @Html.DisplayFor(model => model.RentPrice)</h4>
+            </div>
+            <h2 class="card-title">@Html.DisplayFor(model => model.Name)</h2>
+        </div>
+
+        <div class="card-body">
+         <img src="@Url.Content("~/uploadGallery/" + Model.PicFile1)" class="card-img-top mb-3" alt="Product Image" />
+
+
+            <div class="row">
+                <div class="col-3">
+                    <img src="@Url.Content("~/uploadGallery/" + Model.PicFile2)" class="img-thumbnail mb-3">
+                </div>
+                <div class="col-3">
+                    <img src="@Url.Content("~/uploadGallery/" + Model.PicFile3)" class="img-thumbnail mb-3">
+                </div>
+                <div class="col-3">
+                    <img src="@Url.Content("~/uploadGallery/" + Model.PicFile4)" class="img-thumbnail mb-3">
+                </div>
+                <div class="col-3">
+                    <img src="@Url.Content("~/uploadGallery/" + Model.PicFile5)" class="img-thumbnail mb-3">
+                </div>
+            </div>
+            <h5>@Html.DisplayFor(model => model.Description)</h5>
+            <hr />
+            <a href="#" class="btn btn-info btn-lg float-right disabled">Contact Landlord</a>
+        </div>
+    </div>
+
+
+        <div class="card mb-4">
+        <div class="card-header bg-info text-white">
+            <h5 class="card-title">Description</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                 
+                                <th scope="row">@Html.DisplayNameFor(model => model.Sqft)</th>
+                                <td>@Html.DisplayFor(model => model.Sqft)</td>
+                                <th scope="row">@Html.DisplayNameFor(model => model.RentPrice)</th>
+                                <td>@Html.DisplayFor(model => model.RentPrice)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">@Html.DisplayNameFor(model => model.Rooms)</th>
+                                <td>@Html.DisplayFor(model => model.Rooms)</td>
+                                <th scope="row">@Html.DisplayNameFor(model => model.BathRooms)</th>
+                                <td>@Html.DisplayFor(model => model.BathRooms)</td>
+                                 
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+     
+
+    <!-- Second Card with Location -->
+    <div class="card mb-4">
+        <div class="card-header bg-info text-white">
+            <h5 class="card-title">Location</h5>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong>@Html.DisplayNameFor(model => model.StreetName)</strong>: @Html.DisplayFor(model => model.StreetName)
+                </li>
+                <li class="list-group-item">
+                    <strong>@Html.DisplayNameFor(model => model.CityId)</strong>: @Html.DisplayFor(model => model.CityId)
+                </li>
+                <li class="list-group-item">
+                    <strong>@Html.DisplayNameFor(model => model.ZipCode)</strong>: @Html.DisplayFor(model => model.ZipCode)
+                </li>
+                <li class="list-group-item">
+                    <strong>@Html.DisplayNameFor(model => model.ZipCode)</strong>: @Html.DisplayFor(model => model.ZipCode)
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="card mb-4">
+        <div class="card-header bg-info text-white">
+            <h5 class="card-title">Amenities</h5>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong>@Html.DisplayNameFor(model => model.StreetName)</strong>: @Html.DisplayFor(model => model.StreetName)
+                </li>
+                <li class="list-group-item">
+                    <strong>@Html.DisplayNameFor(model => model.CityId)</strong>: @Html.DisplayFor(model => model.CityId)
+                </li>
+                <li class="list-group-item">
+                    <strong>@Html.DisplayNameFor(model => model.ZipCode)</strong>: @Html.DisplayFor(model => model.ZipCode)
+                </li>
+                <li class="list-group-item">
+                    <strong>@Html.DisplayNameFor(model => model.ZipCode)</strong>: @Html.DisplayFor(model => model.ZipCode)
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="card mb-4">
+        <div class="card-header bg-info text-white">
+            <h5 class="card-title">Building Amenities</h5>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <strong>@Html.DisplayNameFor(model => model.Description)</strong>: @Html.DisplayFor(model => model.Description)
+                </li>
+
+                <li class="list-group-item">
+                    <strong>@Html.DisplayNameFor(model => model.Sqft)</strong>: @Html.DisplayFor(model => model.Sqft)
+                </li>
+
+
+                <li class="list-group-item">
+                    <strong>@Html.DisplayNameFor(model => model.RentPrice)</strong>: @Html.DisplayFor(model => model.RentPrice)
+                </li>
+                <li class="list-group-item">
+                    <strong>@Html.DisplayNameFor(model => model.Rooms)</strong>: @Html.DisplayFor(model => model.Rooms)
+                </li>
+                <li class="list-group-item">
+                    <strong>@Html.DisplayNameFor(model => model.BathRooms)</strong>: @Html.DisplayFor(model => model.BathRooms)
+                </li>
+                <li class="list-group-item">
+                    <strong>@Html.DisplayNameFor(model => model.ZipCode)</strong>: @Html.DisplayFor(model => model.ZipCode)
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+     
+ 
+
+

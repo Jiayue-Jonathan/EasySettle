@@ -1,0 +1,589 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\easySettle.bundle.scp.css",
+      "PackagePath": "staticwebassets\\easySettle.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\0632cced-2ea3-489d-a761-c3fee9c324b9.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\0632cced-2ea3-489d-a761-c3fee9c324b9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\066e3527-fa0e-4769-95de-c98d368b0e80.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\066e3527-fa0e-4769-95de-c98d368b0e80.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\09995252-b267-45d7-8c5d-311a2a87086b.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\09995252-b267-45d7-8c5d-311a2a87086b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\0c5d3372-af09-45fe-96a3-4772d990850b.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\0c5d3372-af09-45fe-96a3-4772d990850b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\0d0b81c1-4cd7-4a09-b8c7-bf13e40fadd7.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\0d0b81c1-4cd7-4a09-b8c7-bf13e40fadd7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\0e2ae66d-20b6-43d7-a7af-944a2db928c4.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\0e2ae66d-20b6-43d7-a7af-944a2db928c4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\0fe920ff-2c2d-41f3-b463-fe229525a73d.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\0fe920ff-2c2d-41f3-b463-fe229525a73d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\1074d8f0-17ce-4c8b-a9a7-5e76ce8a4ef7.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\1074d8f0-17ce-4c8b-a9a7-5e76ce8a4ef7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\13319cc0-6f7f-4008-868d-e71a68b38da4.jpeg",
+      "PackagePath": "staticwebassets\\uploadGallery\\13319cc0-6f7f-4008-868d-e71a68b38da4.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\13593d0e-626a-4e5f-aaa8-2383eb036956.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\13593d0e-626a-4e5f-aaa8-2383eb036956.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\14173d74-4138-4c90-ab9c-98d39f3b3e9b.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\14173d74-4138-4c90-ab9c-98d39f3b3e9b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\16ac5372-62d1-43d4-8465-356376ee7d5e.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\16ac5372-62d1-43d4-8465-356376ee7d5e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\20883479-7a2a-42a4-9b05-bfb101ceea86.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\20883479-7a2a-42a4-9b05-bfb101ceea86.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\2160e802-5bcc-4fb9-9faf-0064a29ce06a.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\2160e802-5bcc-4fb9-9faf-0064a29ce06a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\2253d601-5e48-4793-8942-d8e990bd8c6d.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\2253d601-5e48-4793-8942-d8e990bd8c6d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\235d0c4d-68c9-4611-9eaf-b25b00f4e393.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\235d0c4d-68c9-4611-9eaf-b25b00f4e393.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\24a094c5-3c2c-4cf3-8504-1a5436506f54.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\24a094c5-3c2c-4cf3-8504-1a5436506f54.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\271a7a1e-d07c-4f84-932d-40e8a90568bc.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\271a7a1e-d07c-4f84-932d-40e8a90568bc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\2beea74f-7853-4fc0-b269-8a81855e43e8.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\2beea74f-7853-4fc0-b269-8a81855e43e8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\2fb5ca46-cf42-475f-90fa-4a359c4abef9.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\2fb5ca46-cf42-475f-90fa-4a359c4abef9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\32160c56-7ebf-4c15-b77b-97dba62bac88.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\32160c56-7ebf-4c15-b77b-97dba62bac88.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\38347edc-5f34-4be0-9c0d-ec9d708c2472.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\38347edc-5f34-4be0-9c0d-ec9d708c2472.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\3b1d6aab-086b-41b6-82f7-50b01830316e.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\3b1d6aab-086b-41b6-82f7-50b01830316e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\3c83fabd-9e05-4143-8f17-48bfe1fc2ab2.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\3c83fabd-9e05-4143-8f17-48bfe1fc2ab2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\3db24ef2-3b4f-4d73-8ba6-2f50b9fe42f3.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\3db24ef2-3b4f-4d73-8ba6-2f50b9fe42f3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\3e75224a-9245-4016-87ed-1a9cefb2fe5f.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\3e75224a-9245-4016-87ed-1a9cefb2fe5f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\4153c363-d2ff-422f-8da1-610c50a4a101.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\4153c363-d2ff-422f-8da1-610c50a4a101.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\46e4fc9a-285f-4b76-87c3-52ab7588423e.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\46e4fc9a-285f-4b76-87c3-52ab7588423e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\474e6584-dfde-4f37-ad1d-2356dcded8b0.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\474e6584-dfde-4f37-ad1d-2356dcded8b0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\4be640ba-89d4-4bf2-a252-c04691a9e4c2.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\4be640ba-89d4-4bf2-a252-c04691a9e4c2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\4daaf0c4-1e2f-4f8f-af06-def498ec8a2a.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\4daaf0c4-1e2f-4f8f-af06-def498ec8a2a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\4de55ee2-6b80-46ff-a8ca-8ce4ac5bcd20.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\4de55ee2-6b80-46ff-a8ca-8ce4ac5bcd20.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\5afe1363-61c4-4361-98f1-7389b9a078eb.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\5afe1363-61c4-4361-98f1-7389b9a078eb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\5b97c8e0-3268-44d4-bcea-c2bac3d0098e.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\5b97c8e0-3268-44d4-bcea-c2bac3d0098e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\608814d0-5dca-4d85-b4ab-0b5aa7655ece.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\608814d0-5dca-4d85-b4ab-0b5aa7655ece.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\65cb6e13-5eb7-4dde-9ff6-8c8e0a90ee10.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\65cb6e13-5eb7-4dde-9ff6-8c8e0a90ee10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\6a788da9-9c0e-4ab8-8240-1b5639a690f4.jpeg",
+      "PackagePath": "staticwebassets\\uploadGallery\\6a788da9-9c0e-4ab8-8240-1b5639a690f4.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\6ddcf644-1163-4ea2-923e-de7436e564df.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\6ddcf644-1163-4ea2-923e-de7436e564df.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\6e98005a-3b9f-451b-a440-f4a0f4250509.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\6e98005a-3b9f-451b-a440-f4a0f4250509.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\70124721-ecfd-47ca-b262-73c8b65cdb16.jpeg",
+      "PackagePath": "staticwebassets\\uploadGallery\\70124721-ecfd-47ca-b262-73c8b65cdb16.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\701a8261-392c-4621-ad80-266eff667c08.jpeg",
+      "PackagePath": "staticwebassets\\uploadGallery\\701a8261-392c-4621-ad80-266eff667c08.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\720a9fb8-ceaf-41b7-b220-276352d3298c.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\720a9fb8-ceaf-41b7-b220-276352d3298c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\72b98fb0-fa9a-4d5f-aaa3-8d2317f9cdbd.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\72b98fb0-fa9a-4d5f-aaa3-8d2317f9cdbd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\76fec282-57a7-4cc2-ab5e-1e17fe3009bb.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\76fec282-57a7-4cc2-ab5e-1e17fe3009bb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\77f40dcc-1c5f-4d67-ae62-6beeb21eeb71.jpeg",
+      "PackagePath": "staticwebassets\\uploadGallery\\77f40dcc-1c5f-4d67-ae62-6beeb21eeb71.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\7a561788-160e-414a-ae29-cc644ad272ad.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\7a561788-160e-414a-ae29-cc644ad272ad.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\7bd0fb80-eeac-446b-9124-0f765c2315fb.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\7bd0fb80-eeac-446b-9124-0f765c2315fb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\85d0df51-63b6-4c28-8956-812d9c66765c.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\85d0df51-63b6-4c28-8956-812d9c66765c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\8a8c22d5-f0b6-4649-96c4-1584885b7e49.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\8a8c22d5-f0b6-4649-96c4-1584885b7e49.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\8c9e8e0c-465d-4dd8-a9c0-c2f2cb00022e.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\8c9e8e0c-465d-4dd8-a9c0-c2f2cb00022e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\8cd7a25a-74ac-44b9-8ff3-6110228b29a0.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\8cd7a25a-74ac-44b9-8ff3-6110228b29a0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\8e3c07c6-c523-4d04-9a05-1ff820150319.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\8e3c07c6-c523-4d04-9a05-1ff820150319.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\8ea2656d-f0d8-40dd-8700-1e5be50ac521.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\8ea2656d-f0d8-40dd-8700-1e5be50ac521.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\917bdeea-d4e4-4d79-a5b9-25c694a86f87.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\917bdeea-d4e4-4d79-a5b9-25c694a86f87.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\937c07f6-03c3-4820-960d-e516975be87a.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\937c07f6-03c3-4820-960d-e516975be87a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\96ccaed7-b40a-4865-a0cf-7283cbb358ad.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\96ccaed7-b40a-4865-a0cf-7283cbb358ad.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\a5e494c9-d71a-4993-a134-46f9726d3f49.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\a5e494c9-d71a-4993-a134-46f9726d3f49.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\aef29403-d4ec-4cd1-80a2-78307a3e50c1.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\aef29403-d4ec-4cd1-80a2-78307a3e50c1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\af49b829-1b77-4744-a14a-86c49e9789e8.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\af49b829-1b77-4744-a14a-86c49e9789e8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\b4763234-77f8-4faa-9563-718a37c78439.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\b4763234-77f8-4faa-9563-718a37c78439.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\b7d32e47-a3bb-42f6-8760-153262790ad7.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\b7d32e47-a3bb-42f6-8760-153262790ad7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\b92e4a0a-f9f3-4dee-8354-b5cdcb4ec773.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\b92e4a0a-f9f3-4dee-8354-b5cdcb4ec773.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\bba566e7-94d7-405d-ba80-3e20b7caf82f.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\bba566e7-94d7-405d-ba80-3e20b7caf82f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\be58f8c7-7f92-4bb9-a63a-046b3915a7df.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\be58f8c7-7f92-4bb9-a63a-046b3915a7df.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\bf4314d5-62ed-43a0-8e18-b36eb672f4f1.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\bf4314d5-62ed-43a0-8e18-b36eb672f4f1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\c08b3155-4685-4427-8b6a-a9dca27a0f57.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\c08b3155-4685-4427-8b6a-a9dca27a0f57.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\c19a556a-42ac-4f24-8dcf-6d017354f890.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\c19a556a-42ac-4f24-8dcf-6d017354f890.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\c2ba3aa3-199f-4f2b-b3f7-e726c9eb3421.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\c2ba3aa3-199f-4f2b-b3f7-e726c9eb3421.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\c375ea77-9be7-4401-b605-870950610ed0.jpeg",
+      "PackagePath": "staticwebassets\\uploadGallery\\c375ea77-9be7-4401-b605-870950610ed0.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\c723636e-e6ba-44b0-9346-772c02eaeea3.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\c723636e-e6ba-44b0-9346-772c02eaeea3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\cfdbe396-6987-4ef1-8857-4a626ccdce93.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\cfdbe396-6987-4ef1-8857-4a626ccdce93.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\e022b537-d408-418f-a602-7a50974dabae.jpeg",
+      "PackagePath": "staticwebassets\\uploadGallery\\e022b537-d408-418f-a602-7a50974dabae.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\e38f1c14-8fee-4513-b3da-979df63a9718.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\e38f1c14-8fee-4513-b3da-979df63a9718.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\e8733481-e86b-4333-9225-c67d8ff3dd9e.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\e8733481-e86b-4333-9225-c67d8ff3dd9e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\ef573ec9-a73c-4890-b405-d7ba508ee1df.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\ef573ec9-a73c-4890-b405-d7ba508ee1df.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\f4b718f5-9239-432c-a1e3-a3bcecca60d6.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\f4b718f5-9239-432c-a1e3-a3bcecca60d6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\fad55efa-c82c-4c0c-bdc4-66936f9d3bf8.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\fad55efa-c82c-4c0c-bdc4-66936f9d3bf8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\fedd0c49-825d-494d-91a1-030e7f468f6d.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\fedd0c49-825d-494d-91a1-030e7f468f6d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\ff93f2bd-59f7-4bee-a1f4-474639acf06a.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\ff93f2bd-59f7-4bee-a1f4-474639acf06a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\wwwroot\\uploadGallery\\fff376b5-a3b6-4fd2-9727-33a0e3f7b5b0.jpg",
+      "PackagePath": "staticwebassets\\uploadGallery\\fff376b5-a3b6-4fd2-9727-33a0e3f7b5b0.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.easySettle.props",
+      "PackagePath": "build\\easySettle.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.easySettle.props",
+      "PackagePath": "buildMultiTargeting\\easySettle.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.easySettle.props",
+      "PackagePath": "buildTransitive\\easySettle.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.easySettle.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

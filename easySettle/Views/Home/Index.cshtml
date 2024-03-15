@@ -1,0 +1,62 @@
+﻿@model IEnumerable<easySettle.Models.Properties>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+
+    <br />
+    <div class="search-wrap">
+        <form asp-controller="Home" asp-action="Search" method="get">
+            <input class="search-input-item" type="search" name="searchProperty" placeholder="Search by: Name, StreetName, ZipCode, Description" aria-label="Search" required>
+            <button class="main-search-button" type="submit">Search</button>
+        </form>
+    </div>
+    <br />
+    <div class="container">
+        <div class="row">
+            @foreach (var property in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="uploadGallery/@property.PicFile1" class="card-img-top" alt="@property.Name">
+                        <div class="card-body">
+                            <h2 class="card-title text-center text-success">
+                                @Html.Raw(property.Name.Length > 40 ? property.Name.Substring(0, 40) + "..." : property.Name)
+                            </h2>
+
+                            <p class="card-text">@Html.Raw(property.Description.Length > 40 ? property.Description.Substring(0, 40) + "..." : property.Description)</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="card-text">$ @property.RentPrice</p>
+                                </div>
+                                <div class="col-6">
+                                    <p class="card-text"><i class="fas fa-bed"></i> @property.Rooms</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="card-text"><i class="fas fa-bath"></i> @property.BathRooms</p>
+                                </div>
+                                <div class="col-6">
+                                    <p class="card-text"><i class="fas fa-home"></i> @property.Sqft</p>
+                                </div>
+                            </div>
+                            <br />
+                            <a href="@Url.Action("Details", "Properties", new { id = property.Id })" class="btn btn-success btn-block">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+    <br />
+
+    <br />
+
+
+</div>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<easySettle.Models.Properties>
+
+<div class="text-center">
+    <button type="button" class="btn btn-primary btn-lg btn-block">Advanced Search</button>
+</div>
+<br />
+
+<div class="property-list scrollable-list" style="margin-top: 20px;">
+
+@*     <h2 class="card-title text-center text-info">Property List</h2>
+ *@
+     <ul class="list-group">
+        @foreach (var property in Model)
+        {
+            <li class="list-group-item">
+
+                <div class="card-body">
+                    <h2 class="card-title text-center text-success">@property.Name</h2>
+                    <img src="@Url.Content("~/uploadGallery/" + property.PicFile1)" al="@property.Name" class="img-thumbnail">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="card-text">Price: @property.RentPrice</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="card-text">Rooms: @property.Rooms</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="card-text">Bathroms: @property.BathRooms</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="card-text">Size: @property.Sqft</p>
+                        </div>
+                    </div>
+                   
+                    <br />
+                    <a href="@Url.Action("Details", "Properties", new { id = property.Id })" class="btn btn-success btn-block">Read more</a>
+                </div>
+            </li>
+        }
+    </ul>
+</div>

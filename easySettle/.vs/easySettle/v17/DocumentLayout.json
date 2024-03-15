@@ -1,0 +1,283 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\views\\home\\mainresults.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:views\\home\\mainresults.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\easysettle.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:easysettle.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\views\\properties\\propertieslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:views\\properties\\propertieslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\views\\home\\homeresults.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:views\\home\\homeresults.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\views\\properties\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:views\\properties\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\views\\properties\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:views\\properties\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\views\\properties\\allproperties.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:views\\properties\\allproperties.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\controllers\\propertiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:controllers\\propertiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\views\\properties\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:views\\properties\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|c:\\users\\54995\\desktop\\fdu learning\\capstone\\easysettle\\easysettle\\easysettle\\viewmodel\\propertieseditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F52FFCD-272C-4802-9724-2C865298CC85}|easySettle.csproj|solutionrelative:viewmodel\\propertieseditviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 195,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAmwAkAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-15T06:36:32.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAADwvxwAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T20:28:28.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-02-26T20:27:17.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "easySettle.csproj",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\easySettle.csproj",
+              "RelativeDocumentMoniker": "easySettle.csproj",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\easySettle.csproj",
+              "RelativeToolTip": "easySettle.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-26T20:28:39.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAA2wAkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T20:28:02.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainResults.cshtml",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Home\\MainResults.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\MainResults.cshtml",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Home\\MainResults.cshtml",
+              "RelativeToolTip": "Views\\Home\\MainResults.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-26T20:27:17.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PropertiesList.cshtml",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Properties\\PropertiesList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Properties\\PropertiesList.cshtml",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Properties\\PropertiesList.cshtml",
+              "RelativeToolTip": "Views\\Properties\\PropertiesList.cshtml",
+              "ViewState": "AQIAABYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-26T20:27:17.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HomeResults.cshtml",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Home\\HomeResults.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\HomeResults.cshtml",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Home\\HomeResults.cshtml",
+              "RelativeToolTip": "Views\\Home\\HomeResults.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-26T20:27:17.596Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Properties\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Properties\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Properties\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Properties\\Edit.cshtml",
+              "ViewState": "AQIAACUBAAAAAAAAAADwvywBAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-26T20:27:17.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Properties\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Properties\\Details.cshtml",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Properties\\Details.cshtml",
+              "RelativeToolTip": "Views\\Properties\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-26T20:27:17.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAswBgAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-26T20:27:17.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AllProperties.cshtml",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Properties\\AllProperties.cshtml",
+              "RelativeDocumentMoniker": "Views\\Properties\\AllProperties.cshtml",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Properties\\AllProperties.cshtml",
+              "RelativeToolTip": "Views\\Properties\\AllProperties.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-26T20:27:17.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PropertiesController.cs",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Controllers\\PropertiesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PropertiesController.cs",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Controllers\\PropertiesController.cs",
+              "RelativeToolTip": "Controllers\\PropertiesController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAhwCIAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T20:27:17.636Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Properties\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Properties\\Create.cshtml",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\Views\\Properties\\Create.cshtml",
+              "RelativeToolTip": "Views\\Properties\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYBAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-26T20:27:17.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PropertiesEditViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\ViewModel\\PropertiesEditViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\PropertiesEditViewModel.cs",
+              "ToolTip": "C:\\Users\\54995\\Desktop\\FDU learning\\capstone\\easysettle\\EasySettle\\easySettle\\ViewModel\\PropertiesEditViewModel.cs",
+              "RelativeToolTip": "ViewModel\\PropertiesEditViewModel.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAA0wAQAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T20:27:17.653Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

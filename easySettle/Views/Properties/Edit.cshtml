@@ -1,0 +1,326 @@
+﻿@model easySettle.ViewModel.PropertiesEditViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <h1>Edit</h1>
+
+    <h4>Properties</h4>
+    <hr />
+
+    <div class="container-fluid">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <ul class="nav nav-tabs" id="myTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="general-tab" data-toggle="tab" href="#general" role="tab" aria-controls="general" aria-selected="true" disabled><h3>General</h3></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="location-tab" data-toggle="tab" href="#location" role="tab" aria-controls="location" aria-selected="false" disabled><h3>Location</h3></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="amenities-tab" data-toggle="tab" href="#amenities" role="tab" aria-controls="amenities" aria-selected="false" disabled><h3>Amenities</h3></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="galery-tab" data-toggle="tab" href="#galery" role="tab" aria-controls="galery" aria-selected="false" disabled><h3>Galery</h3></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="submit-tab" data-toggle="tab" href="#submit" role="tab" aria-controls="submit" aria-selected="false" disabled><h3>Submit</h3></a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="myTabsContent">
+                <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+                    <h4>Basic Info</h4>
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="Name" class="control-label"></label>
+                                    <input asp-for="Name" class="form-control" required />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="RentPrice" class="control-label"></label>
+                                    <input asp-for="RentPrice" class="form-control" required />
+                                    <span asp-validation-for="RentPrice" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="Rooms" class="control-label"></label>
+                                    <input asp-for="Rooms" class="form-control" required />
+                                    <span asp-validation-for="Rooms" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="BathRooms" class="control-label"></label>
+                                    <input asp-for="BathRooms" class="form-control" required />
+                                    <span asp-validation-for="BathRooms" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="Sqft" class="control-label"></label>
+                                    <input asp-for="Sqft" class="form-control" required />
+                                    <span asp-validation-for="Sqft" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="Description" class="control-label"></label>
+                                    <textarea asp-for="Description" class="form-control" rows="4" required></textarea>
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <br />
+                    <button type="button" class="btn btn-primary btn-lg next-tab" data-next="#location-tab">Next</button>
+                </div>
+
+                <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+                    <h4>Location info</h4>
+
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="StreetName" class="control-label"></label>
+                                    <input asp-for="StreetName" class="form-control" required />
+                                    <span asp-validation-for="StreetName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="ZipCode" class="control-label"></label>
+                                    <input asp-for="ZipCode" class="form-control" required />
+                                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Lat" class="control-label"></label>
+                                    <input asp-for="Lat" class="form-control" required />
+                                    <span asp-validation-for="Lat" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Lon" class="control-label"></label>
+                                    <input asp-for="Lon" class="form-control" required />
+                                    <span asp-validation-for="Lon" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="CityId" class="control-label"></label>
+                                    <select asp-for="CityId" class="form-control" asp-items="ViewBag.CityId" required></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <button type="button" class="btn btn-secondary btn-lg prev-tab" data-prev="#general-tab">Previous</button>
+                    <button type="button" class="btn btn-primary btn-lg next-tab" data-next="#amenities-tab">Next</button>
+
+                </div>
+
+
+                <div class="tab-pane fade" id="amenities" role="tabpanel" aria-labelledby="amenities-tab">
+                    <h4>Amenities</h4>
+                    <h6>Unit Amenities</h6>
+                    <div class="container mt-5">
+                        <div class="row">
+                            @foreach (var amenity in ViewBag.Amenities)
+                            {
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="amenity_@amenity.Id" name="selectedAmenities" value="@amenity.Id" class="form-check-input" />
+                                        <label for="amenity_@amenity.Id" class="form-check-label">@amenity.Name</label>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <br />
+
+
+
+                    <h6>Building Amenities:</h6>
+                    <div class="container mt-5">
+                        <div class="row">
+                            @foreach (var buildingAmenity in ViewBag.BuildingAmenities)
+                            {
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="buildingAmenity_@buildingAmenity.Id" name="selectedBuildingAmenities" value="@buildingAmenity.Id" class="form-check-input" />
+                                        <label for="buildingAmenity_@buildingAmenity.Id" class="form-check-label">@buildingAmenity.Name</label>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <br />
+
+
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="PetFriendly" /> @Html.DisplayNameFor(model => model.PetFriendly)
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="PropertyTypeId" class="control-label"></label>
+                        <select asp-for="PropertyTypeId" class="form-control" asp-items="ViewBag.PropertyTypeId"></select>
+                    </div>
+
+                    <br />
+
+
+                    <button type="button" class="btn btn-secondary btn-lg prev-tab" data-prev="#location-tab">Previous</button>
+                    <button type="button" class="btn btn-primary btn-lg next-tab" data-next="#galery-tab">Next</button>
+
+
+                </div>
+
+
+                <div class="tab-pane fade" id="galery" role="tabpanel" aria-labelledby="galery-tab">
+                    <h4>Photo Gallery</h4>
+
+
+                    <div id="galleryItems">
+                        <div class="form-group">
+                            <input type="file" asp-for="PicFile1" class="form-control" required />
+                            <span asp-validation-for="PicFile1" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div id="galleryItems">
+                        <div class="form-group">
+                            <input type="file" asp-for="PicFile2" class="form-control" required />
+                            <span asp-validation-for="PicFile2" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div id="galleryItems">
+                        <div class="form-group">
+                            <input type="file" asp-for="PicFile3" class="form-control" required />
+                            <span asp-validation-for="PicFile3" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div id="galleryItems">
+                        <div class="form-group">
+                            <input type="file" asp-for="PicFile4" class="form-control" required />
+                            <span asp-validation-for="PicFile4" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div id="galleryItems">
+                        <div class="form-group">
+                            <input type="file" asp-for="PicFile5" class="form-control" required />
+                            <span asp-validation-for="PicFile5" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <br />
+                    <button type="button" class="btn btn-secondary btn-lg prev-tab" data-prev="#amenities-tab">Previous</button>
+                    <button type="button" class="btn btn-primary btn-lg next-tab" data-next="#submit-tab">Next</button>
+
+                </div>
+
+
+
+                <div class="tab-pane fade" id="submit" role="tabpanel" aria-labelledby="submit-tab">
+                    <h4>Publish</h4>
+
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Enable" /> @Html.DisplayNameFor(model => model.Enable)
+                        </label>
+                    </div>
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-success btn-lg">Create</button>
+                        <button type="button" class="btn btn-secondary btn-lg prev-tab" data-prev="#galery-tab">Previous</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('.next-tab').click(function () {
+                var currentTab = $(this).closest('.tab-pane');
+                var nextTab = $(this).data('next');
+
+                var isValid = validateTab(currentTab);
+
+                if (isValid) {
+                    $(nextTab).tab('show');
+                    $(currentTab).find('.nav-link').removeAttr('disabled');
+                    $(nextTab).find('.nav-link').removeAttr('disabled');
+                }
+            });
+
+            $('.prev-tab').click(function () {
+                var currentTab = $(this).closest('.tab-pane');
+                var prevTab = $(this).data('prev');
+                $(prevTab).tab('show');
+                $(currentTab).find('.nav-link').removeAttr('disabled');
+            });
+
+            function validateTab(tab) {
+                var isValid = true;
+
+                tab.find('input, select, textarea').each(function () {
+                    if ($(this).prop('required') && $(this).val().trim() === '') {
+                        isValid = false;
+                        alert('Please fill out all the required fields.');
+                        return false; // Break the loop if any required field is empty
+                    }
+                });
+
+                return isValid;
+            }
+        });
+    </script>
+
+}
