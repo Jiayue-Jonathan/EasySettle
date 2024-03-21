@@ -1,2 +1,0 @@
-# EasySettle
-Capstone Project

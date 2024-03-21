@@ -1,0 +1,30 @@
+@model EasySettle.Models.Property
+
+@{
+    ViewData["Title"] = "Upload Photo";
+    int propertyId = (int)ViewData["PropertyID"]; // Retrieve the PropertyID from ViewData
+}
+
+<h1>Upload Photo</h1>
+
+<form asp-action="UploadPhoto" asp-route-id="@propertyId" method="post" enctype="multipart/form-data">
+    <input type="file" name="photos" multiple />
+    <button type="submit">Upload</button>
+</form>
+
+
+@* check why it's wrong
+@model EasySettle.Models.Property
+
+@{
+    ViewData["Title"] = "Upload Photo";
+}
+
+<h1>Upload Photo</h1>
+
+<form asp-action="UploadPhoto" asp-route-id="@Model.PropertyID" method="post" enctype="multipart/form-data">
+    <input type="file" name="photos" multiple />
+    <button type="submit">Upload</button>
+</form> *@
+
+
