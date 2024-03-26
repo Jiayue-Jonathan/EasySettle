@@ -1,62 +1,58 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EasySettle.Data;
 using EasySettle.Models;
 
-namespace EasySettle.Controllers
+namespace EasySettle.Controllers;
+
+public class OwnerController : Controller
 {
-    public class OwnerController : Controller
+    private readonly AppDbContext _context;
+
+    public OwnerController(AppDbContext context)
     {
-        private readonly AppDbContext _context;
+        _context = context;
+    }
 
-        public OwnerController(AppDbContext context)
+    // GET: Owner
+    public async Task<IActionResult> Index()
+    {
+            return _context.Owners != null ? 
+                        View(await _context.Owners.ToListAsync()) :
+                        Problem("Entity set 'AppDbContext.Owners'  is null.");
+    }
+
+    // GET: Owner/Details/5
+    public async Task<IActionResult> Details(int? id)
+    {
+        if (id == null || _context.Owners == null)
         {
-            _context = context;
+            return NotFound();
         }
 
-        // GET: Owner
-        public async Task<IActionResult> Index()
+        var owner = await _context.Owners
+            .FirstOrDefaultAsync(m => m.OwnerID == id);
+        if (owner == null)
         {
-              return _context.Owners != null ? 
-                          View(await _context.Owners.ToListAsync()) :
-                          Problem("Entity set 'AppDbContext.Owners'  is null.");
+            return NotFound();
         }
 
-        // GET: Owner/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null || _context.Owners == null)
-            {
-                return NotFound();
-            }
+        return View(owner);
+    }
 
-            var owner = await _context.Owners
-                .FirstOrDefaultAsync(m => m.OwnerID == id);
-            if (owner == null)
-            {
-                return NotFound();
-            }
-
-            return View(owner);
-        }
-
-        // GET: Owner/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
+    // GET: Owner/Create
+    public IActionResult Create()
+    {
+        return View();
+    }
 
     // POST: Owner/Create
     // To protect from overposting attacks, enable the specific properties you want to bind to.
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-   [HttpPost]
-[ValidateAntiForgeryToken]
-public async Task<IActionResult> Create([Bind("OwnerID,Street,City,ZipCode,telNo")] Owner owner)
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create([Bind("OwnerID,Street,City,ZipCode,telNo")] Owner owner)
 {
     try
     {
@@ -64,7 +60,6 @@ public async Task<IActionResult> Create([Bind("OwnerID,Street,City,ZipCode,telNo
         {
             _context.Add(owner);
             await _context.SaveChangesAsync();
-            // Log success message
             Console.WriteLine("Owner created successfully.");
             return RedirectToAction(nameof(Index));
         }
@@ -73,16 +68,19 @@ public async Task<IActionResult> Create([Bind("OwnerID,Street,City,ZipCode,telNo
             // Log validation errors
             foreach (var key in ModelState.Keys)
             {
-                foreach (var error in ModelState[key].Errors)
+                var entry = ModelState[key];
+                if (entry != null && entry.Errors != null) // Nullable check added here
                 {
-                    Console.WriteLine($"Validation error for {key}: {error.ErrorMessage}");
+                    foreach (var error in entry.Errors)
+                    {
+                        Console.WriteLine($"Validation error for {key}: {error.ErrorMessage}");
+                    }
                 }
             }
         }
     }
     catch (Exception ex)
     {
-        // Log exception details
         Console.WriteLine($"An error occurred while creating the owner: {ex.Message}");
     }
     // If execution reaches here, there was a problem, return to the create view
@@ -91,97 +89,97 @@ public async Task<IActionResult> Create([Bind("OwnerID,Street,City,ZipCode,telNo
 
 
 
-        // GET: Owner/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+    // GET: Owner/Edit/5
+    public async Task<IActionResult> Edit(int? id)
+    {
+        if (id == null || _context.Owners == null)
         {
-            if (id == null || _context.Owners == null)
-            {
-                return NotFound();
-            }
-
-            var owner = await _context.Owners.FindAsync(id);
-            if (owner == null)
-            {
-                return NotFound();
-            }
-            return View(owner);
+            return NotFound();
         }
 
-        // POST: Owner/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("OwnerID,Street,City,ZipCode,telNo")] Owner owner)
+        var owner = await _context.Owners.FindAsync(id);
+        if (owner == null)
         {
-            if (id != owner.OwnerID)
-            {
-                return NotFound();
-            }
+            return NotFound();
+        }
+        return View(owner);
+    }
 
-            if (ModelState.IsValid)
+    // POST: Owner/Edit/5
+    // To protect from overposting attacks, enable the specific properties you want to bind to.
+    // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(int id, [Bind("OwnerID,Street,City,ZipCode,telNo")] Owner owner)
+    {
+        if (id != owner.OwnerID)
+        {
+            return NotFound();
+        }
+
+        if (ModelState.IsValid)
+        {
+            try
             {
-                try
+                _context.Update(owner);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!OwnerExists(owner.OwnerID))
                 {
-                    _context.Update(owner);
-                    await _context.SaveChangesAsync();
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+                else
                 {
-                    if (!OwnerExists(owner.OwnerID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    throw;
                 }
-                return RedirectToAction(nameof(Index));
             }
-            return View(owner);
-        }
-
-        // GET: Owner/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.Owners == null)
-            {
-                return NotFound();
-            }
-
-            var owner = await _context.Owners
-                .FirstOrDefaultAsync(m => m.OwnerID == id);
-            if (owner == null)
-            {
-                return NotFound();
-            }
-
-            return View(owner);
-        }
-
-        // POST: Owner/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.Owners == null)
-            {
-                return Problem("Entity set 'AppDbContext.Owners'  is null.");
-            }
-            var owner = await _context.Owners.FindAsync(id);
-            if (owner != null)
-            {
-                _context.Owners.Remove(owner);
-            }
-            
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        return View(owner);
+    }
 
-        private bool OwnerExists(int id)
+    // GET: Owner/Delete/5
+    public async Task<IActionResult> Delete(int? id)
+    {
+        if (id == null || _context.Owners == null)
+        {
+            return NotFound();
+        }
+
+        var owner = await _context.Owners
+            .FirstOrDefaultAsync(m => m.OwnerID == id);
+        if (owner == null)
+        {
+            return NotFound();
+        }
+
+        return View(owner);
+    }
+
+    // POST: Owner/Delete/5
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        if (_context.Owners == null)
+        {
+            return Problem("Entity set 'AppDbContext.Owners'  is null.");
+        }
+        var owner = await _context.Owners.FindAsync(id);
+        if (owner != null)
+        {
+            _context.Owners.Remove(owner);
+        }
+        
+        await _context.SaveChangesAsync();
+        return RedirectToAction(nameof(Index));
+    }
+
+    private bool OwnerExists(int id)
         {
           return (_context.Owners?.Any(e => e.OwnerID == id)).GetValueOrDefault();
         }
-    }
 }
+

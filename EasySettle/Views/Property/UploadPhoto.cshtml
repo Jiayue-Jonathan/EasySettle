@@ -2,29 +2,37 @@
 
 @{
     ViewData["Title"] = "Upload Photo";
-    int propertyId = (int)ViewData["PropertyID"]; // Retrieve the PropertyID from ViewData
+    int propertyId = (int)ViewData["PropertyID"];
+    var blobUrls = ViewData["BlobUrls"] as List<string>;
 }
 
 <h1>Upload Photo</h1>
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+
 
 <form asp-action="UploadPhoto" asp-route-id="@propertyId" method="post" enctype="multipart/form-data">
-    <input type="file" name="photos" multiple />
-    <button type="submit">Upload</button>
+    <input type="file" name="photos" multiple onchange="document.getElementById('uploadButton').disabled = !this.value;" />
+    <button type="submit" id="uploadButton" disabled title="File size no more than 2MB">Upload</button>
+    <span class="note" title="File size no more than 2MB"></span>
 </form>
 
+<h2>Photos</h2>
+<div class="photo-gallery">
+    @foreach (var url in blobUrls)
+    {
+        <div class="photo-item">
+            <img src="@url" alt="Property Image" />
+            <form asp-action="DeletePhoto" asp-route-id="@propertyId" asp-route-blobUrl="@url" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+    }
+</div>
 
-@* check why it's wrong
-@model EasySettle.Models.Property
-
-@{
-    ViewData["Title"] = "Upload Photo";
+<style>
+.note {
+    cursor: help;
+    padding: 0 5px;
+    font-size: smaller;
 }
-
-<h1>Upload Photo</h1>
-
-<form asp-action="UploadPhoto" asp-route-id="@Model.PropertyID" method="post" enctype="multipart/form-data">
-    <input type="file" name="photos" multiple />
-    <button type="submit">Upload</button>
-</form> *@
-
-
+</style>

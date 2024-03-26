@@ -16,17 +16,16 @@ namespace EasySettle.Models
         public int OwnerID { get; set; }
  
         [StringLength(MaxNameLength, MinimumLength = MinNameLength)]
-        public string Street { get; set; }
-        public string City { get; set; }
-        public string ZipCode { get; set; }
+        public string? Street { get; set; }
+        public CityEnum City { get; set; }
+        public string? ZipCode { get; set; }
         public TypeEnum Type { get; set; }
-        public int Rooms { get; set; }
+        public decimal Rooms { get; set; }
+        public decimal BathRooms { get; set; }
         public int Rent { get; set; }
         public bool Rented { get; set; }
-
-
-
-        public virtual ICollection<Photo>? Photos { get; set; }
+        public bool Parking { get; set; }
+        public bool Pets { get; set; }
         public virtual Owner? Owner { get; set; }
         public virtual ICollection<Lease>? Leases { get; set; }
     }
@@ -36,4 +35,21 @@ namespace EasySettle.Models
         Apartment,
         House
     }
+
+    public enum CityEnum
+    {
+        Vancouver,
+        Burnaby,
+        Richmond,
+        Surrey,
+        Langley,
+        Coquitlam,
+        NorthVancouver,
+        WestVancouver,
+        NewWestminster,
+        Delta,
+        MapleRidge,
+        // Add other cities as needed
+    }
+
 }

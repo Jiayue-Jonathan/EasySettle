@@ -15,7 +15,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.PropertyID)
             </th>            
-
             <th>
                 @Html.DisplayNameFor(model => model.Street)
             </th>
@@ -32,11 +31,24 @@
                 @Html.DisplayNameFor(model => model.Rooms)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.BathRooms)
+            </th>            
+            <th>
                 @Html.DisplayNameFor(model => model.Rent)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Rented)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Parking)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.Pets)
+            </th>                        
+            <th>
+                @Html.DisplayNameFor(model => model.Owner.OwnerID) <!-- Add the OwnerID header -->
+            </th>
+            <th></th>
             <th></th>
             <th></th> <!-- Add a new column header for the Upload button -->
         </tr>
@@ -63,17 +75,29 @@
                 @Html.DisplayFor(modelItem => item.Rooms)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.BathRooms)
+            </td>            
+            <td>
                 @Html.DisplayFor(modelItem => item.Rent)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Rented)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Parking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pets)
+            </td>                         
+            <td>
+                @Html.DisplayFor(modelItem => item.Owner.OwnerID) <!-- Display the OwnerID -->
+            </td>
+            <td>
                 <a asp-action="Edit" asp-route-id="@item.PropertyID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.PropertyID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.PropertyID">Delete</a>
             </td>
-            <td> <!-- Add a new column for the Upload button -->
+            <td>
                 <a asp-action="UploadPhoto" asp-route-id="@item.PropertyID">Upload Photo</a>
             </td>
         </tr>

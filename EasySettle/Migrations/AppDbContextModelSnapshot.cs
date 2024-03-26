@@ -31,15 +31,12 @@ namespace EasySettle.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ClientID"));
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("telNo")
@@ -91,14 +88,13 @@ namespace EasySettle.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OwnerID"));
 
-                    b.Property<string>("City")
+                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Street")
-                        .HasMaxLength(32)
-                        .HasColumnType("nvarchar(32)");
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ZipCode")
+                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("telNo")
@@ -109,27 +105,6 @@ namespace EasySettle.Migrations
                     b.ToTable("Owners");
                 });
 
-            modelBuilder.Entity("EasySettle.Models.Photo", b =>
-                {
-                    b.Property<int>("PhotoID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PhotoID"));
-
-                    b.Property<int>("PropertyID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Url")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("PhotoID");
-
-                    b.HasIndex("PropertyID");
-
-                    b.ToTable("Photos");
-                });
-
             modelBuilder.Entity("EasySettle.Models.Property", b =>
                 {
                     b.Property<int>("PropertyID")
@@ -138,12 +113,20 @@ namespace EasySettle.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PropertyID"));
 
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("BathRooms")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("City")
+                        .HasColumnType("int");
 
                     b.Property<int>("OwnerID")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Parking")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Pets")
+                        .HasColumnType("bit");
 
                     b.Property<int>("Rent")
                         .HasColumnType("int");
@@ -151,11 +134,10 @@ namespace EasySettle.Migrations
                     b.Property<bool>("Rented")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Rooms")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Rooms")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Street")
-                        .IsRequired()
                         .HasMaxLength(32)
                         .HasColumnType("nvarchar(32)");
 
@@ -163,7 +145,6 @@ namespace EasySettle.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ZipCode")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PropertyID");
@@ -192,17 +173,6 @@ namespace EasySettle.Migrations
                     b.Navigation("Property");
                 });
 
-            modelBuilder.Entity("EasySettle.Models.Photo", b =>
-                {
-                    b.HasOne("EasySettle.Models.Property", "Property")
-                        .WithMany("Photos")
-                        .HasForeignKey("PropertyID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Property");
-                });
-
             modelBuilder.Entity("EasySettle.Models.Property", b =>
                 {
                     b.HasOne("EasySettle.Models.Owner", "Owner")
@@ -222,8 +192,6 @@ namespace EasySettle.Migrations
             modelBuilder.Entity("EasySettle.Models.Property", b =>
                 {
                     b.Navigation("Leases");
-
-                    b.Navigation("Photos");
                 });
 #pragma warning restore 612, 618
         }

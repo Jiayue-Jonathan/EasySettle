@@ -11,14 +11,9 @@ namespace EasySettle.Models
 
 
         public int OwnerID { get; set; }
-
-        [StringLength(MaxNameLength, MinimumLength = MinNameLength)] // Setting min and max length for street
-        public string? Street { get; set; }
-
-        public string? City { get; set; }
-        public string? ZipCode { get; set; }
-
-        
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
+        public string? Email { get; set; }        
 
         [RegularExpression(@"^\d{9}$")] // Regular expression pattern for exactly 9 digits
         public int telNo { get; set; }

@@ -14,7 +14,6 @@ namespace EasySettle.Data
         public DbSet<Owner> Owners { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Lease> Leases { get; set; }
-        public DbSet<Photo> Photos { get; set; }
 
 
 
@@ -36,12 +35,6 @@ namespace EasySettle.Data
                 .HasOne(l => l.Client)
                 .WithOne()
                 .HasForeignKey<Lease>(l => l.ClientID);
-
-            modelBuilder.Entity<Photo>()
-                .HasOne(p => p.Property)
-                .WithMany(pp => pp.Photos)
-                .HasForeignKey(pp => pp.PropertyID)
-                .OnDelete(DeleteBehavior.Cascade); 
 
         }
     }
