@@ -1,0 +1,149 @@
+@using EasySettle.Models
+
+
+@functions{
+
+    private string GetMinValue(SearchCriteria criteria, string propertyName)
+    {
+        if (criteria == null) return ""; 
+
+        switch (propertyName)
+        {
+            case "Rooms":
+                return criteria.MinRooms?.ToString() ?? "";
+            case "BathRooms":
+                return criteria.MinBathRooms?.ToString() ?? "";
+            case "Rent":
+                return criteria.MinRent?.ToString() ?? "";
+            default:
+                return "";
+        }
+    }
+
+
+    private string GetMaxValue(SearchCriteria criteria, string propertyName)
+    {
+        if (criteria == null) return "";
+
+        switch (propertyName)
+        {
+            case "Rooms":
+                return criteria.MaxRooms?.ToString() ?? "";
+            case "BathRooms":
+                return criteria.MaxBathRooms?.ToString() ?? "";
+            case "Rent":
+                return criteria.MaxRent?.ToString() ?? "";
+            default:
+                return "";
+        }
+    }
+}
+
+@{
+    var criteria = ViewBag.SearchCriteria as SearchCriteria;
+}
+
+@{  
+    var propertyNames = new List<string> { "Rooms", "BathRooms", "Rent" };
+}
+
+<head> 
+    <link rel="stylesheet" href="~/css/category.css" >  
+</head>
+<body>
+
+    <form method="post" asp-controller="Home" asp-action="CombinedSearch">
+        <nav class="navbar bg-body pb-5">
+            <div class="container-fluid d-flex col-lg-6">
+                @foreach (var propertyName in propertyNames)
+                {
+                <div class="dropdown">
+                    <button class="btn btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        @propertyName
+                    </button>          
+                    <ul class="dropdown-menu p-2">
+                        <li>
+                            <input type="hidden" name="@($"Is{propertyName}SearchActive")" id="@($"Is{propertyName}SearchActive")" value="false">
+                            <input type="number" name="@($"Min{propertyName}")" placeholder="@($"Min {propertyName}")" value="@GetMinValue(criteria, propertyName)">
+                            <input type="number" name="@($"Max{propertyName}")" placeholder="@($"Max {propertyName}")" value="@GetMaxValue(criteria, propertyName)">
+                        </li>
+                    </ul>
+                </div>
+                }
+                <button type="submit">Search</button>
+            </div>
+        </nav>
+    </form>
+
+
+
+    <style>
+        .category-link {
+            color: black !important; /* Ensures override of default link color */
+            text-decoration: none !important; /* Removes underline from links */
+        }
+
+        .category-link:hover {
+            color: black !important; /* Keeps the text color black even on hover */
+            text-decoration: none !important; /* Optionally, prevent underline on hover */
+        }
+        .form-control::placeholder {
+            color: #ccc; /* Light gray; adjust as needed */
+            opacity: 1; /* Firefox */
+        }    
+        .btn-outline-warning.active, .btn-highlighted {
+            background-color: #ffc107; /* Bootstrap warning color */
+            color: white; /* Adjust based on your design */
+        }
+        
+    </style>   
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('.dropdown').forEach(dropdown => 
+            {
+                const button = dropdown.querySelector('.dropdown-toggle');
+                const inputs = dropdown.querySelectorAll('input[type="number"]');
+                // Function to check inputs and toggle button highlight
+                const toggleButtonHighlight = () => 
+                {
+                    const isActive = Array.from(inputs).some(input => input.value.trim() !== '');
+                    if (isActive) {
+                        button.classList.add('btn-highlighted');
+                    } else {
+                        button.classList.remove('btn-highlighted');
+                    }
+                };
+
+                // Initial check in case there are pre-filled values
+                toggleButtonHighlight();
+
+                inputs.forEach(input => {  // Ensure this line correctly iterates over 'inputs'
+                    input.addEventListener('input', () => {
+                        toggleButtonHighlight();
+
+                        let criterion;
+                        if (input.name.includes("MinRooms") || input.name.includes("MaxRooms")) {
+                            criterion = "Rooms";
+                        } else if (input.name.includes("MinBathRooms") || input.name.includes("MaxBathRooms")) {
+                            criterion = "BathRooms";
+                        } else if (input.name.includes("MinRent") || input.name.includes("MaxRent")) {
+                            criterion = "Rent";
+                        }
+
+                        const isActiveInput = document.querySelector(`input[name="Min${criterion}"]`).value.trim() !== '' || 
+                                            document.querySelector(`input[name="Max${criterion}"]`).value.trim() !== '';
+                        document.getElementById(`Is${criterion}SearchActive`).value = isActiveInput.toString();
+                    });
+                });
+
+            });
+        });
+    </script>
+
+
+
+
+</body>
+
+
