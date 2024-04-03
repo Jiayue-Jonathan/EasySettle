@@ -86,8 +86,42 @@ public async Task<IActionResult> Index()
     return View(await appDbContext.ToListAsync());
 }
 
-// GET: Property/Details/5
-public async Task<IActionResult> Details(int? id)
+ //default route: /Property/MapSearch
+
+public async Task<IActionResult> MapSearch()
+{
+    return View();
+}
+
+// GET: Property/GetAllProperties
+[HttpGet]
+public async Task<IActionResult> GetAllProperties(string? city = null, int? minRent = null, int? maxRent = null)
+{
+    IQueryable<Property> query = _context.Properties;
+
+    // city filter
+    if (!string.IsNullOrEmpty(city))
+    {
+        var cityEnum = Enum.Parse<CityEnum>(city);
+        query = query.Where(p => p.City == cityEnum);
+    }
+
+    // rent filter
+    if (minRent.HasValue)
+    {
+        query = query.Where(p => p.Rent >= minRent.Value);
+    }
+    if (maxRent.HasValue)
+    {
+        query = query.Where(p => p.Rent <= maxRent.Value);
+    }
+
+    var properties = await query.ToListAsync();
+    return Json(properties);
+}
+
+    // GET: Property/Details/5
+    public async Task<IActionResult> Details(int? id)
 {
     if (id == null || _context.Properties == null)
     {

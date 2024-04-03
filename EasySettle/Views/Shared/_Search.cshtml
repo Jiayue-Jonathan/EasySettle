@@ -60,7 +60,7 @@
                 <div class="dropdown">
                     <button class="btn btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         @propertyName
-                    </button>          
+                    </button>
                     <ul class="dropdown-menu p-2">
                         <li>
                             <input type="hidden" name="@($"Is{propertyName}SearchActive")" id="@($"Is{propertyName}SearchActive")" value="false">
@@ -71,6 +71,9 @@
                 </div>
                 }
                 <button type="submit">Search</button>
+                <!-- Add MapSearch button -->
+                <a href="@Url.Action("MapSearch", "Property")" class="btn btn-outline-info">MapSearch</a>
+            </div>
             </div>
         </nav>
     </form>
