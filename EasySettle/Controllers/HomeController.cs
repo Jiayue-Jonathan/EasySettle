@@ -56,44 +56,52 @@ public class HomeController : Controller
         return await SearchByCategory(null);
     }
 
-
-
 public async Task<IActionResult> CombinedSearch(SearchCriteria criteria)
 {
-    // Make the criteria available to the view for re-rendering the form
     ViewBag.SearchCriteria = criteria;
-
-    // Start with all properties
     IQueryable<Property> query = _context.Properties;
 
-    // Check if the Rooms filter should be applied
-    if (criteria.IsRoomsSearchActive)
+    if (criteria.MinRooms.HasValue || criteria.MaxRooms.HasValue)
     {
         query = query.Where(p => (!criteria.MinRooms.HasValue || p.Rooms >= criteria.MinRooms.Value) && 
                                  (!criteria.MaxRooms.HasValue || p.Rooms <= criteria.MaxRooms.Value));
     }
 
-    // Check if the BathRooms filter should be applied
-    if (criteria.IsBathRoomsSearchActive)
+    if (criteria.MinBathRooms.HasValue || criteria.MaxBathRooms.HasValue)
     {
         query = query.Where(p => (!criteria.MinBathRooms.HasValue || p.BathRooms >= criteria.MinBathRooms.Value) && 
                                  (!criteria.MaxBathRooms.HasValue || p.BathRooms <= criteria.MaxBathRooms.Value));
     }
 
-    // Check if the Rent filter should be applied
-    if (criteria.IsRentSearchActive)
+    if (criteria.MinRent.HasValue || criteria.MaxRent.HasValue)
     {
         query = query.Where(p => (!criteria.MinRent.HasValue || p.Rent >= criteria.MinRent.Value) && 
                                  (!criteria.MaxRent.HasValue || p.Rent <= criteria.MaxRent.Value));
     }
 
-    // Additional filters can be checked and applied in a similar manner
+    if (criteria.Type.HasValue)
+    {
+        query = query.Where(p => p.Type == criteria.Type.Value);
+    }
 
-    // Finalize the query and execute it
+    if (criteria.City.HasValue)
+    {
+        query = query.Where(p => p.City == criteria.City.Value);
+    }
+
+    if (criteria.Parking.HasValue)
+    {
+        query = query.Where(p => p.Parking == criteria.Parking.Value);
+    }
+
+    if (criteria.Pets.HasValue)
+    {
+        query = query.Where(p => p.Pets == criteria.Pets.Value);
+    }
+
     var properties = await query.ToListAsync();
     var propertyViewModels = await GetPropertyViewModelsAsync(properties);
 
-    // Return the view with filtered results
     return View("SearchResults", propertyViewModels);
 }
 

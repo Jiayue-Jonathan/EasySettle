@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6Nu7NDPgSHuAehrsBj3rgRoTecD9vKBRExRCofBGaozmY952cZa+S7nbYOq6rCfFLlECuvU+OYdtXGR10lJUAg==",
+  "dgSpecHash": "ZcPCun82MYfsAPfxs8PEC7QB+o6PANDTXuUH+DLzj5LfAsyMO/VCvxUg9WFZ/810dlTDVdAJuhMPQNacdiwUEw==",
   "success": true,
-  "projectFilePath": "/Users/jiayue/Documents/FDU/Capstone/EasySettleNew/EasySettle/EasySettle.csproj",
+  "projectFilePath": "/Users/jiayue/Documents/GitHub/EasySettle/EasySettle/EasySettle.csproj",
   "expectedPackageFiles": [
     "/Users/jiayue/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/jiayue/.nuget/packages/azure.identity/1.10.4/azure.identity.1.10.4.nupkg.sha512",
@@ -218,9 +218,9 @@
     "/Users/jiayue/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512",
     "/Users/jiayue/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
     "/Users/jiayue/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
+    "/Users/jiayue/.nuget/packages/microsoft.netcore.app.ref/7.0.16/microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
     "/Users/jiayue/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.16/microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512",
-    "/Users/jiayue/.nuget/packages/microsoft.netcore.app.host.osx-arm64/7.0.16/microsoft.netcore.app.host.osx-arm64.7.0.16.nupkg.sha512",
-    "/Users/jiayue/.nuget/packages/microsoft.netcore.app.ref/7.0.16/microsoft.netcore.app.ref.7.0.16.nupkg.sha512"
+    "/Users/jiayue/.nuget/packages/microsoft.netcore.app.host.osx-arm64/7.0.16/microsoft.netcore.app.host.osx-arm64.7.0.16.nupkg.sha512"
   ],
   "logs": []
 }
