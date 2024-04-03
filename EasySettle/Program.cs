@@ -30,6 +30,11 @@ builder.Configuration.AddUserSecrets<Program>();
 var sqlConnection = builder.Configuration.GetConnectionString("Easysettle:SqlDb");
 var storageConnection = builder.Configuration.GetConnectionString("Easysettle:Storage");
 
+
+// GoogleAuth
+var clientId = builder.Configuration.GetConnectionString("GoogleAuth:ClientId");
+var clientSecret = builder.Configuration.GetConnectionString("GoogleAuth:ClientSecret");
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(sqlConnection));
 
