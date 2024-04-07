@@ -56,14 +56,28 @@
 
         function fetchProperties() {
             fetch('/Property/GetAllProperties')
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
                 .then(properties => {
-                    properties.forEach(property => {
-                        addMarker(property);
-                    });
+                    // Check if properties contain error message
+                    if (properties && properties.error) {
+                        // Display alert with error message
+                        alert(properties.error);
+                    } else {
+                        properties.forEach(property => {
+                            addMarker(property);
+                        });
+                    }
                 })
                 .catch(error => {
                     console.error('Error fetching properties:', error);
+
+                    // Display error message to user
+                    alert("An error occurred: " + error.message);
                 });
         }
 
@@ -88,6 +102,8 @@
                                         <p>Rooms: ${property.rooms}</p>
                                         <p>BathRooms: ${property.bathRooms}</p>
                                         <p>Rent: ${property.rent}</p>
+                                        <button onclick="openDetailsInNewWindow(${property.propertyID})">Details</button>
+
                                         <!-- Add more property details as needed -->
                                     </div>`;
                     const infowindow = new google.maps.InfoWindow({
@@ -142,7 +158,9 @@
             document.getElementById('maxRent').value = '';
             fetchProperties();
         }
-
+        function openDetailsInNewWindow(propertyId) {
+            window.open(`/Property/Details/${propertyId}`, '_blank');
+        }
         window.initMap = initMap;</script>
 
 

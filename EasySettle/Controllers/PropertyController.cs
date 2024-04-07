@@ -98,9 +98,13 @@ public async Task<IActionResult> MapSearch()
 public async Task<IActionResult> GetAllProperties(string? city = null, int? minRent = null, int? maxRent = null)
 {
     IQueryable<Property> query = _context.Properties;
-
-    // city filter
-    if (!string.IsNullOrEmpty(city))
+    // Validate minRent and maxRent
+    if (minRent.HasValue && maxRent.HasValue && minRent > maxRent)
+    {
+        return BadRequest("minRent must be less than or equal to maxRent");
+    }
+        // city filter
+        if (!string.IsNullOrEmpty(city))
     {
         var cityEnum = Enum.Parse<CityEnum>(city);
         query = query.Where(p => p.City == cityEnum);
@@ -119,6 +123,49 @@ public async Task<IActionResult> GetAllProperties(string? city = null, int? minR
     var properties = await query.ToListAsync();
     return Json(properties);
 }
+    public IActionResult OpenGmailCompose(int propertyId, string draft)
+    {
+        try
+        {
+            // Get property by propertyId
+            var property = _context.Properties.FirstOrDefault(p => p.PropertyID == propertyId);
+            if (property == null)
+            {
+                ViewBag.Message = $"Property with ID {propertyId} not found";
+                return View();
+            }
+
+            // Get owner's email
+            var ownerEmail = _context.Owners
+                .Where(o => o.OwnerID == property.OwnerID)
+                .Select(o => o.Email)
+                .FirstOrDefault();
+
+
+
+            if (ownerEmail == null)
+            {
+                ViewBag.Message = $"Owner for property with ID {propertyId} not found";
+                return View();
+            }
+
+            // topic
+            string subject = "Property rental apply";
+
+            // content
+            string body = draft;
+
+            // Construct URL
+            string url = $"https://mail.google.com/mail/?view=cm&to={Uri.EscapeDataString(ownerEmail)}&su={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(body)}";
+
+            return Redirect(url);
+        }
+        catch (Exception ex)
+        {
+            ViewBag.Message = $"Failed to open Gmail compose page: {ex.Message}";
+            return View();
+        }
+    }
 
     // GET: Property/Details/5
     public async Task<IActionResult> Details(int? id)
