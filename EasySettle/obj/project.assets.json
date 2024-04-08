@@ -11876,11 +11876,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jiayue/Documents/GitHub/EasySettle/easySettle/EasySettle.csproj",
+      "projectUniqueName": "/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/EasySettle.csproj",
       "projectName": "EasySettle",
-      "projectPath": "/Users/jiayue/Documents/GitHub/EasySettle/easySettle/EasySettle.csproj",
+      "projectPath": "/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/EasySettle.csproj",
       "packagesPath": "/Users/jiayue/.nuget/packages/",
-      "outputPath": "/Users/jiayue/Documents/GitHub/EasySettle/easySettle/obj/",
+      "outputPath": "/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/jiayue/.nuget/NuGet/NuGet.Config"

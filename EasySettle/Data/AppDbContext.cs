@@ -14,6 +14,8 @@ namespace EasySettle.Data
         public DbSet<Owner> Owners { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Lease> Leases { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserProperty> UserProperties { get; set; }
 
 
 
@@ -36,6 +38,19 @@ namespace EasySettle.Data
                 .WithOne()
                 .HasForeignKey<Lease>(l => l.ClientID);
 
+            // Configuration for the many-to-many relationship between User and Property through UserProperty
+            modelBuilder.Entity<UserProperty>()
+                .HasKey(up => new { up.Email, up.PropertyID }); // Composite key
+
+            modelBuilder.Entity<UserProperty>()
+                .HasOne(up => up.User)
+                .WithMany(u => u.UserProperties)
+                .HasForeignKey(up => up.Email);
+
+            modelBuilder.Entity<UserProperty>()
+                .HasOne(up => up.Property)
+                .WithMany(p => p.UserProperties)
+                .HasForeignKey(up => up.PropertyID);
         }
     }
     

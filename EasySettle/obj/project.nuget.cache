@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZcPCun82MYfsAPfxs8PEC7QB+o6PANDTXuUH+DLzj5LfAsyMO/VCvxUg9WFZ/810dlTDVdAJuhMPQNacdiwUEw==",
+  "dgSpecHash": "XIMbeHV5HD0rW+0FoAKBM+oZHwFp6japp+gQyNCB8JpMMtXuB4PuWeVQlE68ENLEmBCIqxXT9ynwsrUIQeBGBg==",
   "success": true,
-  "projectFilePath": "/Users/jiayue/Documents/GitHub/EasySettle/EasySettle/EasySettle.csproj",
+  "projectFilePath": "/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/EasySettle.csproj",
   "expectedPackageFiles": [
     "/Users/jiayue/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/jiayue/.nuget/packages/azure.identity/1.10.4/azure.identity.1.10.4.nupkg.sha512",
