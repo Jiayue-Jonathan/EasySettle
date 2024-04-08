@@ -17,12 +17,12 @@ namespace EasySettle.Controllers;
 
 public class ProfileController : Controller
 {
-    private readonly AzureAdB2COptions _azureAdB2COptions;
+    // private readonly AzureAdB2COptions _azureAdB2COptions;
 
-    public ProfileController(IOptions<AzureAdB2COptions> azureAdB2COptions)
-    {
-        _azureAdB2COptions = azureAdB2COptions.Value;
-    }
+    // public ProfileController(IOptions<AzureAdB2COptions> azureAdB2COptions)
+    // {
+    //     _azureAdB2COptions = azureAdB2COptions.Value;
+    // }
     public IActionResult Index()
     {
         var model = new UserProfileViewModel
