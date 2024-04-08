@@ -71,6 +71,10 @@
                 @Html.DisplayFor(model => model.Owner.OwnerID)
             </dd>
         </dl>
+        <a asp-controller="Property" asp-action="OpenGmailCompose" asp-route-propertyId="@Model.PropertyID" asp-route-draft="Property address: @(Model.Street), @(Model.City), @(Model.ZipCode)" class="btn btn-primary">Send Email</a>
+    </div>
+    <div>
+        <h1> </h1>
     </div>
 
 
