@@ -28,6 +28,8 @@ namespace EasySettle.Models
         public bool Pets { get; set; }
         public virtual Owner? Owner { get; set; }
         public virtual ICollection<Lease>? Leases { get; set; }
+        public virtual ICollection<UserProperty> UserProperties { get; set; } = new List<UserProperty>();
+
     }
 
     public enum TypeEnum

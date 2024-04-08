@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jiayue/Documents/GitHub/EasySettle/EasySettle/EasySettle.csproj": {}
+    "/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/EasySettle.csproj": {}
   },
   "projects": {
-    "/Users/jiayue/Documents/GitHub/EasySettle/EasySettle/EasySettle.csproj": {
+    "/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/EasySettle.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jiayue/Documents/GitHub/EasySettle/EasySettle/EasySettle.csproj",
+        "projectUniqueName": "/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/EasySettle.csproj",
         "projectName": "EasySettle",
-        "projectPath": "/Users/jiayue/Documents/GitHub/EasySettle/EasySettle/EasySettle.csproj",
+        "projectPath": "/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/EasySettle.csproj",
         "packagesPath": "/Users/jiayue/.nuget/packages/",
-        "outputPath": "/Users/jiayue/Documents/GitHub/EasySettle/EasySettle/obj/",
+        "outputPath": "/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/jiayue/.nuget/NuGet/NuGet.Config"
