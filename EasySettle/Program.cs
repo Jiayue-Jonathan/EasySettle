@@ -19,89 +19,65 @@ using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews()
-    .AddMicrosoftIdentityUI();
-
-// Add user secrets configuration source
-builder.Configuration.AddUserSecrets<Program>();
-
-// Add database context to the container.
-var sqlConnection = builder.Configuration.GetConnectionString("Easysettle:SqlDb");
-var storageConnection = builder.Configuration.GetConnectionString("Easysettle:Storage");
-
-
-// GoogleAuth
-var clientId = builder.Configuration.GetConnectionString("GoogleAuth:ClientId");
-var clientSecret = builder.Configuration.GetConnectionString("GoogleAuth:ClientSecret");
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(sqlConnection));
-
-builder.Services.AddAzureClients(azureBuilder =>
-{
-    azureBuilder.AddBlobServiceClient(storageConnection);
-});
-
-// Configure Azure AD B2C authentication
-builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-    .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("AzureAdB2C"));
-
-// // Additional configuration for saving tokens and configuring OpenID Connect options
-// builder.Services.Configure<OpenIdConnectOptions>(OpenIdConnectDefaults.AuthenticationScheme, options =>
-// {
-//     options.SaveTokens = true;
-
-//     // Additional OpenID Connect options configuration here
-//     // e.g., options.TokenValidationParameters.NameClaimType = "name";
-// });
-
-
-
-builder.Services.AddAuthorization(options =>
-{
-    // Create a policy for users
-    options.AddPolicy("RequireUserRole", policy => policy.RequireRole("User"));
-    
-    // Create a policy for administrators
-    options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
-});
-
-
-// Add RazorPages and Blazor services here
-builder.Services.AddRazorPages()
-    .AddMicrosoftIdentityUI();
-builder.Services.AddServerSideBlazor().AddMicrosoftIdentityConsentHandler();
+// Encapsulate service configuration
+ConfigureServices(builder.Services, builder.Configuration, builder.Environment);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
-}
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-
-app.UseRouting();
-
-// Authentication middleware should be called before UseAuthorization.
-app.UseAuthentication();
-app.UseAuthorization();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.MapRazorPages();
-app.MapBlazorHub();
-
-// Call the SeedDatabase method here, after building the app and before running it.
-SeedDatabase(app);
+ConfigureMiddlewareAndRoutes(app);
 
 app.Run();
+
+void ConfigureServices(IServiceCollection services, IConfiguration configuration, IWebHostEnvironment env)
+{
+    services.AddControllersWithViews().AddMicrosoftIdentityUI();
+
+    // Move the AddUserSecrets call to the correct place
+    if (env.IsDevelopment())
+    {
+        builder.Configuration.AddUserSecrets<Program>();
+    }
+
+    var sqlConnection = configuration.GetConnectionString("Easysettle:SqlDb");
+    var storageConnection = configuration.GetConnectionString("Easysettle:Storage");
+
+    services.AddDbContext<AppDbContext>(options => options.UseSqlServer(sqlConnection));
+    services.AddAzureClients(azureBuilder => azureBuilder.AddBlobServiceClient(storageConnection));
+    services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme).AddMicrosoftIdentityWebApp(configuration.GetSection("AzureAdB2C"));
+    services.AddAuthorization(options =>
+    {
+        options.AddPolicy("RequireUserRole", policy => policy.RequireRole("User"));
+        options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
+    });
+
+    services.AddRazorPages().AddMicrosoftIdentityUI();
+    services.AddServerSideBlazor().AddMicrosoftIdentityConsentHandler();
+}
+
+void ConfigureMiddlewareAndRoutes(WebApplication app)
+{
+    if (!app.Environment.IsDevelopment())
+    {
+        app.UseExceptionHandler("/Home/Error");
+        app.UseHsts();
+    }
+
+    app.UseHttpsRedirection();
+    app.UseStaticFiles();
+
+    app.UseRouting();
+
+    app.UseAuthentication();
+    app.UseAuthorization();
+
+    app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+    app.MapRazorPages();
+    app.MapBlazorHub();
+
+    SeedDatabase(app);
+}
+
+
 
 void SeedDatabase(WebApplication app)
 {
