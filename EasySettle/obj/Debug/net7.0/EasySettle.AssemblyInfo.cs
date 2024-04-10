@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EasySettle")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40ea446e95bef0eb9199433dae152965bc628fdf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+784b6f068df6f1b39c7c02608df575c32c003e84")]
 [assembly: System.Reflection.AssemblyProductAttribute("EasySettle")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EasySettle")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -26,6 +26,7 @@ namespace EasySettle.Models
         public bool Rented { get; set; }
         public bool Parking { get; set; }
         public bool Pets { get; set; }
+        public bool IsAudited { get; set; }
         public virtual Owner? Owner { get; set; }
         public virtual ICollection<Lease>? Leases { get; set; }
         public virtual ICollection<UserProperty> UserProperties { get; set; } = new List<UserProperty>();

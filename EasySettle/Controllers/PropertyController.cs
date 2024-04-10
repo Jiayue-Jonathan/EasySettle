@@ -186,36 +186,51 @@ public async Task<IActionResult> GetAllProperties(string? city = null, int? minR
     return View(property);
 }
 
-// GET: Property/Create
-public IActionResult Create()
-{
-    ViewData["OwnerID"] = new SelectList(_context.Owners, "OwnerID", "OwnerID");
-    return View();
-}
+    public IActionResult Create()
+    {
+        // Check if the user has the "Landlord" role
+        var isLandlord = User.Claims.Any(c => c.Type == "extension_Roles" && c.Value == "Landlord");
+
+        if (!isLandlord)
+        {
+            // If the user is not a landlord, return an unauthorized access view or redirect
+            return Unauthorized(); // Or RedirectToAction("AccessDenied", "Account");
+        }
+
+        return View();
+    }
 
 // POST: Property/Create
 // To protect from overposting attacks, enable the specific properties you want to bind to.
 // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-[HttpPost]
-[ValidateAntiForgeryToken]
-public async Task<IActionResult> Create(
-    [Bind("PropertyID,OwnerID,Street,City,ZipCode,Type,Rooms,BathRooms,Rent,Rented,Parking,Pets")] Property property)
-
-{
-    if (ModelState.IsValid)
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create(
+        [Bind("PropertyID,OwnerID,Street,City,ZipCode,Type,Rooms,BathRooms,Rent,Rented,Parking,Pets,Audited")] Property property)
     {
-        _context.Add(property);
-        await _context.SaveChangesAsync();
-        
-        // Create a blob container for the property
-        var containerClient = _blobServiceClient.GetBlobContainerClient(property.PropertyID.ToString());
-        await containerClient.CreateIfNotExistsAsync(PublicAccessType.Blob);
-        
-        return RedirectToAction(nameof(Index));
+        var isLandlord = User.Claims.Any(c => c.Type == "extension_Roles" && c.Value == "Landlord");
+
+        if (!isLandlord)
+        {
+            return Unauthorized(); // Or RedirectToAction("AccessDenied", "Account");
+        }
+
+        if (ModelState.IsValid)
+        {
+            property.IsAudited = false; // Properties start as not audited
+            _context.Add(property);
+            await _context.SaveChangesAsync();
+
+            // Create a blob container for the property
+            var containerClient = _blobServiceClient.GetBlobContainerClient(property.PropertyID.ToString());
+            await containerClient.CreateIfNotExistsAsync(PublicAccessType.Blob);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        ViewData["OwnerID"] = new SelectList(_context.Owners, "OwnerID", "OwnerID", property.OwnerID);
+        return View(property);
     }
-    ViewData["OwnerID"] = new SelectList(_context.Owners, "OwnerID", "OwnerID", property.OwnerID);
-    return View(property);
-}
 
 
 // GET: Property/Edit/5

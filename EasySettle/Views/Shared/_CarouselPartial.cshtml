@@ -26,7 +26,7 @@
                     @foreach (var propertyViewModel in Model)
                     {
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="">
+                            <div class="property-item">
                                 <div class="set-bg" style="position: relative;">
                                     <!-- Begin Carousel Code -->
                                     <div id="@($"carouselExample{propertyViewModel.Property.PropertyID}")" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
@@ -55,13 +55,26 @@
                                         <span class="visually-hidden">Next</span>
                                     </button>
                                     </div>
-                                    <!-- End Carousel Code --> 
-                                
+                                    <!-- End Carousel Code -->                                 
                                 </div>
-                                <div class="fs-7 text-center mt-3 mb-3">                               
-                                    <div>
-                                        @($"{FormatRoomsAndBaths(propertyViewModel.Property.Rooms)}BR {FormatRoomsAndBaths(propertyViewModel.Property.BathRooms)}B")
-                                    </div>
+                                <div class="fs-7 text-center mt-3 mb-3"> 
+                                    <nav class="d-flex align-items-center justify-content-center">
+                                        <div>
+                                            @($"{FormatRoomsAndBaths(propertyViewModel.Property.Rooms)}BR {FormatRoomsAndBaths(propertyViewModel.Property.BathRooms)}B")
+                                        </div>
+                                        <form asp-action="ToggleUserProperty" asp-controller="Home" method="post" class="property-toggle-form">
+                                            <input type="hidden" name="propertyId" value="@propertyViewModel.Property.PropertyID" />
+                                            <div class="form-check form-switch m-2">
+                                                    <input class="form-check-input property-checkbox" type="checkbox" role="switch" 
+                                                        name="IsChecked" 
+                                                        id="@($"propertySwitch-{propertyViewModel.Property.PropertyID}")" 
+                                                        title="Add this to your list" 
+                                                        value="true"
+                                                        @(propertyViewModel.IsChecked ? "checked" : "")>
+                                                    <label class="form-check-label" for="@($"propertySwitch-{propertyViewModel.Property.PropertyID}")"></label>
+                                            </div>
+                                        </form>                                      
+                                    </nav>                      
                                     <div>
                                         <span class="m-1 p-1 border-warning border-bottom border-3">
                                             $@propertyViewModel.Property.Rent.ToString("0")
@@ -81,6 +94,14 @@
         <p>No items found in the selected search.</p>
     }    
 
+    <!-- Custom Alert Box -->
+    <div id="customAlert" class="custom-alert" style="display: none;">
+        <div class="custom-alert-content">
+            <p id="customAlertMessage"></p>
+            <button class="btn btn-warning" onclick="hideCustomAlert()">OK</button>
+        </div>
+    </div>
+
     <style>
         .category-label {
             font-size: 10px;
@@ -96,6 +117,66 @@
             height: 200px; /* Fixed height */
             object-fit: cover; /* Cover ensures that aspect ratios are maintained while filling the container */
             object-position: center; /* Center the image within the container */
-        }        
-    </style>    
+        }   
+        /* Override the background color of checked checkboxes */
+        .form-check-input:checked {
+            background-color: #ffc107 !important;
+            border-color: #ffc107 !important;
+        } 
+        .custom-alert {
+            position: fixed; /* Positioned relative to the viewport */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+            display: flex;
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            z-index: 1000; /* Ensure it sits on top of everything else */
+        }
+
+        .custom-alert-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+    </style>  
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('.property-checkbox').forEach(function(checkbox) {
+                checkbox.addEventListener('change', function() {
+                    // Show custom alert with a confirmation message
+                    if (this.checked) {
+                        showCustomAlert('Added to your list!');
+                    } else {
+                        showCustomAlert('Removed from your list!');
+                    }
+                    
+                    // Find the closest form to the checkbox and submit it
+                    var form = this.closest('form'); // Find the nearest form ancestor
+                    form.submit(); // Submit the form
+                });
+            });
+        });
+
+        function showCustomAlert(message) {
+            document.getElementById('customAlertMessage').innerText = message;
+            document.getElementById('customAlert').style.display = 'flex';
+            
+            // Hide the alert after a short delay for a better user experience
+            setTimeout(() => {
+                document.getElementById('customAlert').style.display = 'none';
+            }, 2000); // Close the alert automatically after 2 seconds
+        }
+
+        function hideCustomAlert() {
+            document.getElementById('customAlert').style.display = 'none';
+        }
+    </script>
+
+
+
 </body>

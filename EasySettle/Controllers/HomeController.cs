@@ -59,7 +59,7 @@ public class HomeController : Controller
 public async Task<IActionResult> CombinedSearch(SearchCriteria criteria)
 {
     ViewBag.SearchCriteria = criteria;
-    IQueryable<Property> query = _context.Properties;
+    IQueryable<Property> query = _context.Properties.Where(p => p.IsAudited); // Only include audited properties
 
     if (criteria.MinRooms.HasValue || criteria.MaxRooms.HasValue)
     {
@@ -112,85 +112,29 @@ public async Task<IActionResult> CombinedSearch(SearchCriteria criteria)
 
         if (city.HasValue)
         {
-            properties = await _context.Properties.Where(c => c.City == city.Value).ToListAsync();
+            properties = await _context.Properties.Where(c => c.City == city.Value && c.IsAudited).ToListAsync(); // Filter by city and audited
         }
         else
         {
-            properties = await _context.Properties.ToListAsync();
+            properties = await _context.Properties.Where(p => p.IsAudited).ToListAsync(); // Only include audited properties
         }
 
         var propertyViewModels = await GetPropertyViewModelsAsync(properties);
 
-        // Use a different view when fetching all categories, if needed
         return View(city.HasValue ? "SearchResults" : "Index", propertyViewModels);
     }
-
-
-    // // For searching by room range
-    // public async Task<IActionResult> SearchByRooms(decimal? minRooms, decimal? maxRooms)
-    // {
-    //     Expression<Func<Property, bool>> condition = null;
-
-    //     if (minRooms.HasValue && maxRooms.HasValue)
-    //     {
-    //         condition = p => p.Rooms >= minRooms && p.Rooms <= maxRooms;
-    //     }
-    //     else if (minRooms.HasValue)
-    //     {
-    //         condition = p => p.Rooms >= minRooms;
-    //     }
-    //     else if (maxRooms.HasValue)
-    //     {
-    //         condition = p => p.Rooms <= maxRooms;
-    //     }
-
-    //     return await GeneralSearch(condition);
-    // }
-
-
-
-    // // For searching by rent range
-    // public async Task<IActionResult> SearchByRent(decimal? minRent, decimal? maxRent)
-    // {
-    //     Expression<Func<Property, bool>> condition = null;
-
-    //     if (minRent.HasValue && maxRent.HasValue)
-    //     {
-    //         condition = p => p.Rent >= minRent && p.Rent <= maxRent;
-    //     }
-    //     else if (minRent.HasValue)
-    //     {
-    //         condition = p => p.Rent >= minRent;
-    //     }
-    //     else if (maxRent.HasValue)
-    //     {
-    //         condition = p => p.Rent <= maxRent;
-    //     }
-
-    //     return await GeneralSearch(condition);
-    // }
-
-
-    // public async Task<IActionResult> GeneralSearch(
-    //     Expression<Func<Property, bool>> condition = null)
-    // {
-    //     IQueryable<Property> query = _context.Properties;
-
-    //     if (condition != null)
-    //     {
-    //         query = query.Where(condition);
-    //     }
-
-    //     var properties = await query.ToListAsync();
-    //     var propertyViewModels = await GetPropertyViewModelsAsync(properties);
-
-    //     return View("SearchResults", propertyViewModels);
-    // }
 
 
     private async Task<List<PropertyViewModel>> GetPropertyViewModelsAsync(IEnumerable<Property> properties)
     {
         var propertyViewModels = new List<PropertyViewModel>();
+                
+        var userEmail = User.Claims.FirstOrDefault(c => c.Type == "emails")?.Value;
+
+        var userProperties = await _context.UserProperties
+                                            .Where(up => up.Email == userEmail)
+                                            .Select(up => up.PropertyID)
+                                            .ToListAsync();        
 
         foreach (var property in properties)
         {
@@ -209,7 +153,9 @@ public async Task<IActionResult> CombinedSearch(SearchCriteria criteria)
             propertyViewModels.Add(new PropertyViewModel
             {
                 Property = property,
-                ImageUrls = blobUrls
+                ImageUrls = blobUrls,
+                // Check if the property ID is in the list of properties for the user
+                IsChecked = userProperties.Contains(property.PropertyID)
             });
         }
 
@@ -252,4 +198,69 @@ public async Task<IActionResult> CombinedSearch(SearchCriteria criteria)
 
         return View();
     }
+
+
+[HttpPost]
+public async Task<IActionResult> ToggleUserProperty(int propertyId, bool isChecked)
+{
+    var userEmail = User.Claims.FirstOrDefault(c => c.Type == "emails")?.Value;
+
+    _logger.LogInformation("ToggleUserProperty called for user {UserEmail} with property ID {PropertyId} and isChecked set to {IsChecked}.", userEmail, propertyId, isChecked);
+
+    if (string.IsNullOrEmpty(userEmail))
+    {
+        _logger.LogWarning("Unauthorized access attempt to ToggleUserProperty.");
+        return Unauthorized("User is not authenticated.");
+    }
+
+    var user = await _context.Users.Include(u => u.UserProperties)
+                .FirstOrDefaultAsync(u => u.Email == userEmail);
+
+    if (user == null)
+    {
+        _logger.LogInformation("Creating new user for email {UserEmail}.", userEmail);
+        user = new User
+        {
+            Email = userEmail,
+            UserProperties = new List<UserProperty>()
+        };
+        _context.Users.Add(user);
+    }
+
+    var property = await _context.Properties.FindAsync(propertyId);
+    if (property == null)
+    {
+        _logger.LogWarning("Property with ID {PropertyId} not found.", propertyId);
+        return NotFound($"Property with ID {propertyId} not found.");
+    }
+
+    var userProperty = user.UserProperties.FirstOrDefault(up => up.PropertyID == propertyId);
+
+    if (isChecked)
+    {
+        if (userProperty == null)
+        {
+            _logger.LogInformation("Adding property ID {PropertyId} to user {UserEmail}'s list.", propertyId, userEmail);
+            var newUserProperty = new UserProperty { Email = userEmail, PropertyID = propertyId };
+            user.UserProperties.Add(newUserProperty);
+            _context.UserProperties.Add(newUserProperty);
+        }
+    }
+    else
+    {
+        if (userProperty != null)
+        {
+            _logger.LogInformation("Removing property ID {PropertyId} from user {UserEmail}'s list.", propertyId, userEmail);
+            user.UserProperties.Remove(userProperty);
+            _context.UserProperties.Remove(userProperty);
+        }
+    }
+
+    await _context.SaveChangesAsync();
+    _logger.LogWarning("User property list updated successfully for user {UserEmail}.", userEmail); //log is not showed???
+    return RedirectToAction("Index");
+}
+
+
+
 }

@@ -10,20 +10,12 @@ using EasySettle.Data;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authentication;
 
-
-
-
 namespace EasySettle.Controllers;
 
-public class ProfileController : Controller
+public class ManageController : Controller
 {
-    // private readonly AzureAdB2COptions _azureAdB2COptions;
 
-    // public ProfileController(IOptions<AzureAdB2COptions> azureAdB2COptions)
-    // {
-    //     _azureAdB2COptions = azureAdB2COptions.Value;
-    // }
-    public IActionResult Index()
+    public IActionResult Profile()
     {
         var model = new UserProfileViewModel
         {
@@ -36,7 +28,7 @@ public class ProfileController : Controller
 
         };
 
-        return View(model);
+        return View("Profile",model);
     }
 
 }
