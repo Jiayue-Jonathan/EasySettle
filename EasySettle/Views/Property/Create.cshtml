@@ -14,10 +14,6 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
-                <label asp-for="OwnerID" class="control-label"></label>
-                <select asp-for="OwnerID" class ="form-control" asp-items="ViewBag.OwnerID"></select>
-            </div>
-            <div class="form-group">
                 <label asp-for="Street" class="control-label"></label>
                 <input asp-for="Street" class="form-control" />
                 <span asp-validation-for="Street" class="text-danger"></span>
@@ -59,11 +55,6 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Rented" /> @Html.DisplayNameFor(model => model.Rented)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
                     <input class="form-check-input" asp-for="Parking" /> @Html.DisplayNameFor(model => model.Parking)
                 </label>
             </div>
@@ -73,13 +64,42 @@
                 </label>
             </div>            
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" />
             </div>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <!-- Modal -->    
         </form>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $("form").submit(function(event){
+            // Prevent the form from submitting immediately
+            event.preventDefault();
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+            // Here you would normally submit the form data using AJAX
+            // For this example, we'll just show the modal directly
+            // after form submission would have occurred
+            $('#submissionModal').modal('show');
+        });
+    });
+</script>
+
 

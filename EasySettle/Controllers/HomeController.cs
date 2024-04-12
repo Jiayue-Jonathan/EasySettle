@@ -18,18 +18,12 @@ using System.Threading.Tasks;
 
 namespace EasySettle.Controllers;
 
-public class HomeController : Controller
+public class HomeController : BaseController
 {
-    private readonly ILogger<HomeController> _logger;
-    private readonly AppDbContext _context;
-    private readonly BlobServiceClient _blobServiceClient;
-
-    public HomeController(AppDbContext context, ILogger<HomeController> logger,BlobServiceClient blobServiceClient)
-    {
-        _context = context;
-        _logger = logger;
-        _blobServiceClient = blobServiceClient;
-    }
+    public HomeController(AppDbContext context, ILogger<HomeController> logger, BlobServiceClient blobServiceClient)
+        : base(context, logger, blobServiceClient)
+        {       
+        }
 
     [Authorize] // Ensure this is only accessible for authenticated users
     public IActionResult Profile()
@@ -59,7 +53,7 @@ public class HomeController : Controller
 public async Task<IActionResult> CombinedSearch(SearchCriteria criteria)
 {
     ViewBag.SearchCriteria = criteria;
-    IQueryable<Property> query = _context.Properties;
+    IQueryable<Property> query = _context.Properties.Where(p => p.IsApproved); // Only include approved properties
 
     if (criteria.MinRooms.HasValue || criteria.MaxRooms.HasValue)
     {
@@ -112,108 +106,16 @@ public async Task<IActionResult> CombinedSearch(SearchCriteria criteria)
 
         if (city.HasValue)
         {
-            properties = await _context.Properties.Where(c => c.City == city.Value).ToListAsync();
+            properties = await _context.Properties.Where(c => c.City == city.Value && c.IsApproved).ToListAsync(); // Filter by city and audited
         }
         else
         {
-            properties = await _context.Properties.ToListAsync();
+            properties = await _context.Properties.Where(p => p.IsApproved).ToListAsync(); // Only include audited properties
         }
 
         var propertyViewModels = await GetPropertyViewModelsAsync(properties);
 
-        // Use a different view when fetching all categories, if needed
         return View(city.HasValue ? "SearchResults" : "Index", propertyViewModels);
-    }
-
-
-    // // For searching by room range
-    // public async Task<IActionResult> SearchByRooms(decimal? minRooms, decimal? maxRooms)
-    // {
-    //     Expression<Func<Property, bool>> condition = null;
-
-    //     if (minRooms.HasValue && maxRooms.HasValue)
-    //     {
-    //         condition = p => p.Rooms >= minRooms && p.Rooms <= maxRooms;
-    //     }
-    //     else if (minRooms.HasValue)
-    //     {
-    //         condition = p => p.Rooms >= minRooms;
-    //     }
-    //     else if (maxRooms.HasValue)
-    //     {
-    //         condition = p => p.Rooms <= maxRooms;
-    //     }
-
-    //     return await GeneralSearch(condition);
-    // }
-
-
-
-    // // For searching by rent range
-    // public async Task<IActionResult> SearchByRent(decimal? minRent, decimal? maxRent)
-    // {
-    //     Expression<Func<Property, bool>> condition = null;
-
-    //     if (minRent.HasValue && maxRent.HasValue)
-    //     {
-    //         condition = p => p.Rent >= minRent && p.Rent <= maxRent;
-    //     }
-    //     else if (minRent.HasValue)
-    //     {
-    //         condition = p => p.Rent >= minRent;
-    //     }
-    //     else if (maxRent.HasValue)
-    //     {
-    //         condition = p => p.Rent <= maxRent;
-    //     }
-
-    //     return await GeneralSearch(condition);
-    // }
-
-
-    // public async Task<IActionResult> GeneralSearch(
-    //     Expression<Func<Property, bool>> condition = null)
-    // {
-    //     IQueryable<Property> query = _context.Properties;
-
-    //     if (condition != null)
-    //     {
-    //         query = query.Where(condition);
-    //     }
-
-    //     var properties = await query.ToListAsync();
-    //     var propertyViewModels = await GetPropertyViewModelsAsync(properties);
-
-    //     return View("SearchResults", propertyViewModels);
-    // }
-
-
-    private async Task<List<PropertyViewModel>> GetPropertyViewModelsAsync(IEnumerable<Property> properties)
-    {
-        var propertyViewModels = new List<PropertyViewModel>();
-
-        foreach (var property in properties)
-        {
-            var containerClient = _blobServiceClient.GetBlobContainerClient(property.PropertyID.ToString());
-            await containerClient.CreateIfNotExistsAsync(PublicAccessType.Blob);
-
-            var blobs = containerClient.GetBlobsAsync();
-            var blobUrls = new List<string>();
-
-            await foreach (var blobItem in blobs)
-            {
-                var blobClient = containerClient.GetBlobClient(blobItem.Name);
-                blobUrls.Add(blobClient.Uri.AbsoluteUri);
-            }
-
-            propertyViewModels.Add(new PropertyViewModel
-            {
-                Property = property,
-                ImageUrls = blobUrls
-            });
-        }
-
-        return propertyViewModels;
     }
 
     public async Task<IActionResult> GetDetails(int? id)
@@ -252,4 +154,18 @@ public async Task<IActionResult> CombinedSearch(SearchCriteria criteria)
 
         return View();
     }
+
+[HttpPost]
+public async Task<IActionResult> HandlePropertyToggle(int propertyId, bool isChecked)
+{
+    // Define your redirection targets
+    var redirectToAction = "Index";
+    var redirectToController = "Home";
+
+    // Correctly await the call to the asynchronous method
+    return await ToggleUserProperty(propertyId, isChecked, redirectToAction, redirectToController);
+}
+
+
+
 }

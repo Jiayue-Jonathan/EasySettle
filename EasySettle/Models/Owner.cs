@@ -17,6 +17,9 @@ namespace EasySettle.Models
 
         [RegularExpression(@"^\d{9}$")] // Regular expression pattern for exactly 9 digits
         public int telNo { get; set; }
+        public string? Street { get; set; }
+        public CityEnum City { get; set; }
+        public string? ZipCode { get; set; }
 
         // Navigation property defined as virtual
         public virtual ICollection<Property>? Properties { get; set; }
