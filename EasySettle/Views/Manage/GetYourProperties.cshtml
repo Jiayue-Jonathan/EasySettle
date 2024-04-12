@@ -1,0 +1,65 @@
+@model IEnumerable<EasySettle.Models.Property>
+
+@{
+    ViewData["Title"] = "GetYourProperties";
+}
+
+<body>
+    <h3 class="display-5 text-warning">Your Properties</h3>
+    <a asp-action="PostYourProperty" class="btn btn-warning mb-5">Publish a New Property</a>
+    <div class="container">
+        <div class="row">
+            @foreach (var property in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row mb-2">
+                                <dt class="col-sm-6">PropertyID:</dt>
+                                <dd class="col-sm-6">@property.PropertyID</dd>
+                            </div>                            
+                            <div class="row mb-2">
+                                <dt class="col-sm-6">Street:</dt>
+                                <dd class="col-sm-6">@property.Street</dd>
+                            </div>
+                            <div class="row mb-2">
+                                <dt class="col-sm-6">City:</dt>
+                                <dd class="col-sm-6">@property.City</dd>
+                            </div>
+                            <div class="row mb-2">
+                                <dt class="col-sm-6">Zip Code:</dt>
+                                <dd class="col-sm-6">@property.ZipCode</dd>
+                            </div>
+                            <div class="row mb-2">
+                                <dt class="col-sm-6">Type:</dt>
+                                <dd class="col-sm-6">@property.Type</dd>
+                            </div>
+                            <div class="row mb-2">
+                                <dt class="col-sm-6">Rooms:</dt>
+                                <dd class="col-sm-6">@property.Rooms</dd>
+                            </div>
+                            <div class="row mb-2">
+                                <dt class="col-sm-6">Rent:</dt>
+                                <dd class="col-sm-6">@property.Rent</dd>
+                            </div>
+                            <div class="row mb-2">
+                                <dt class="col-sm-6">Rented:</dt>
+                                <dd class="col-sm-6">@property.Rented</dd>
+                            </div>
+                            <div class="row mb-2">
+                                <dt class="col-sm-6">Owner ID:</dt>
+                                <dd class="col-sm-6">@property.Owner.OwnerID</dd>
+                            </div>
+                            <div class="row mb-2 align-items-center">
+                                <p class="display-7 mb-2 col-sm-6 @(@property.IsAudited ? (@property.IsApproved ? "text-success" : "text-danger") : "text-warning")">
+                                    @(@property.IsAudited ? (@property.IsApproved ? "Published" : "Declined") : "Being Audited")
+                                </p>
+                                <a class="btn btn-warning col-sm-6 @(property.IsAudited ? "" : "disabled")" asp-action="Edit" asp-controller="Property" asp-route-id="@property.PropertyID">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>

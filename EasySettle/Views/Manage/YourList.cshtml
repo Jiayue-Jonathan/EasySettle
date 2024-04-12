@@ -1,10 +1,14 @@
 @model IEnumerable<EasySettle.Models.PropertyViewModel>
 
 @{
+    ViewData["Title"] = "Your List";
+}
+
+@{
     var carouselModel = new PropertyCarouselViewModel
     {
         Properties = Model, 
-        FormSubmitController = "Home",
+        FormSubmitController = "Manage",
         FormSubmitAction = "HandlePropertyToggle"
     };
 }

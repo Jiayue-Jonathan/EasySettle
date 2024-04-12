@@ -70,12 +70,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGVhc2UvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/Views/Manage/List.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlL0xpc3QuY3NodG1s
+[/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/Views/Manage/GetYourProperties.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlL0dldFlvdXJQcm9wZXJ0aWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/Views/Manage/PostYourProperty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlL1Bvc3RZb3VyUHJvcGVydHkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/Views/Manage/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlL1Byb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/Views/Manage/YourList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlL1lvdXJMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/Views/Owner/Create.cshtml]
@@ -136,6 +144,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/Views/Shared/_PropertyCarousel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Qcm9wZXJ0eUNhcm91c2VsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/jiayue/Documents/GitHub/EasySettle-1/EasySettle/Views/Shared/_Search.cshtml]

@@ -7,32 +7,52 @@
 }
 
 <h1>Upload Photo</h1>
-<a asp-action="Index" class="btn btn-secondary">Back to List</a>
-
 
 <form asp-action="UploadPhoto" asp-route-id="@propertyId" method="post" enctype="multipart/form-data">
-    <input type="file" name="photos" multiple onchange="document.getElementById('uploadButton').disabled = !this.value;" />
-    <button type="submit" id="uploadButton" disabled title="File size no more than 2MB">Upload</button>
-    <span class="note" title="File size no more than 2MB"></span>
+    <input type="file" name="photos" 
+        multiple onchange="document.getElementById('uploadButton').disabled = !this.value;" />
+    <button class="btn btn-warning" type="submit" 
+        id="uploadButton" disabled title="File size no more than 2MB">Upload</button>
+    <span class="note" title="File size no more than 2MB">(File size should be no more than 2MB)</span>
 </form>
 
-<h2>Photos</h2>
 <div class="photo-gallery">
     @foreach (var url in blobUrls)
     {
         <div class="photo-item">
             <img src="@url" alt="Property Image" />
             <form asp-action="DeletePhoto" asp-route-id="@propertyId" asp-route-blobUrl="@url" method="post">
-                <button type="submit">Delete</button>
+                <button class="btn btn-warning-outline" type="submit">Delete</button>
             </form>
         </div>
     }
 </div>
+
+<a asp-action="GetYourProperties" asp-controller="Manage" class="btn btn-warning m-5">Submit</a>
+
 
 <style>
 .note {
     cursor: help;
     padding: 0 5px;
     font-size: smaller;
+}
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align items at the start of the container */
+}
+
+.photo-gallery .photo-item {
+    flex: 0 1 calc(16.66% - 10px); /* Allocate space for 6 items per row, accounting for some margin */
+    margin: 5px; /* Spacing between images */
+    box-sizing: border-box;
+}
+
+.photo-gallery .photo-item img {
+    max-width: 100%; /* Make the image fully occupy its container */
+    max-height: 300px;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain;
 }
 </style>

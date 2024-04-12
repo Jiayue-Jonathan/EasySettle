@@ -18,18 +18,12 @@ using System.Threading.Tasks;
 
 namespace EasySettle.Controllers;
 
-public class HomeController : Controller
+public class HomeController : BaseController
 {
-    private readonly ILogger<HomeController> _logger;
-    private readonly AppDbContext _context;
-    private readonly BlobServiceClient _blobServiceClient;
-
-    public HomeController(AppDbContext context, ILogger<HomeController> logger,BlobServiceClient blobServiceClient)
-    {
-        _context = context;
-        _logger = logger;
-        _blobServiceClient = blobServiceClient;
-    }
+    public HomeController(AppDbContext context, ILogger<HomeController> logger, BlobServiceClient blobServiceClient)
+        : base(context, logger, blobServiceClient)
+        {       
+        }
 
     [Authorize] // Ensure this is only accessible for authenticated users
     public IActionResult Profile()
@@ -59,7 +53,7 @@ public class HomeController : Controller
 public async Task<IActionResult> CombinedSearch(SearchCriteria criteria)
 {
     ViewBag.SearchCriteria = criteria;
-    IQueryable<Property> query = _context.Properties.Where(p => p.IsAudited); // Only include audited properties
+    IQueryable<Property> query = _context.Properties.Where(p => p.IsApproved); // Only include approved properties
 
     if (criteria.MinRooms.HasValue || criteria.MaxRooms.HasValue)
     {
@@ -112,54 +106,16 @@ public async Task<IActionResult> CombinedSearch(SearchCriteria criteria)
 
         if (city.HasValue)
         {
-            properties = await _context.Properties.Where(c => c.City == city.Value && c.IsAudited).ToListAsync(); // Filter by city and audited
+            properties = await _context.Properties.Where(c => c.City == city.Value && c.IsApproved).ToListAsync(); // Filter by city and audited
         }
         else
         {
-            properties = await _context.Properties.Where(p => p.IsAudited).ToListAsync(); // Only include audited properties
+            properties = await _context.Properties.Where(p => p.IsApproved).ToListAsync(); // Only include audited properties
         }
 
         var propertyViewModels = await GetPropertyViewModelsAsync(properties);
 
         return View(city.HasValue ? "SearchResults" : "Index", propertyViewModels);
-    }
-
-
-    private async Task<List<PropertyViewModel>> GetPropertyViewModelsAsync(IEnumerable<Property> properties)
-    {
-        var propertyViewModels = new List<PropertyViewModel>();
-                
-        var userEmail = User.Claims.FirstOrDefault(c => c.Type == "emails")?.Value;
-
-        var userProperties = await _context.UserProperties
-                                            .Where(up => up.Email == userEmail)
-                                            .Select(up => up.PropertyID)
-                                            .ToListAsync();        
-
-        foreach (var property in properties)
-        {
-            var containerClient = _blobServiceClient.GetBlobContainerClient(property.PropertyID.ToString());
-            await containerClient.CreateIfNotExistsAsync(PublicAccessType.Blob);
-
-            var blobs = containerClient.GetBlobsAsync();
-            var blobUrls = new List<string>();
-
-            await foreach (var blobItem in blobs)
-            {
-                var blobClient = containerClient.GetBlobClient(blobItem.Name);
-                blobUrls.Add(blobClient.Uri.AbsoluteUri);
-            }
-
-            propertyViewModels.Add(new PropertyViewModel
-            {
-                Property = property,
-                ImageUrls = blobUrls,
-                // Check if the property ID is in the list of properties for the user
-                IsChecked = userProperties.Contains(property.PropertyID)
-            });
-        }
-
-        return propertyViewModels;
     }
 
     public async Task<IActionResult> GetDetails(int? id)
@@ -199,66 +155,15 @@ public async Task<IActionResult> CombinedSearch(SearchCriteria criteria)
         return View();
     }
 
-
 [HttpPost]
-public async Task<IActionResult> ToggleUserProperty(int propertyId, bool isChecked)
+public async Task<IActionResult> HandlePropertyToggle(int propertyId, bool isChecked)
 {
-    var userEmail = User.Claims.FirstOrDefault(c => c.Type == "emails")?.Value;
+    // Define your redirection targets
+    var redirectToAction = "Index";
+    var redirectToController = "Home";
 
-    _logger.LogInformation("ToggleUserProperty called for user {UserEmail} with property ID {PropertyId} and isChecked set to {IsChecked}.", userEmail, propertyId, isChecked);
-
-    if (string.IsNullOrEmpty(userEmail))
-    {
-        _logger.LogWarning("Unauthorized access attempt to ToggleUserProperty.");
-        return Unauthorized("User is not authenticated.");
-    }
-
-    var user = await _context.Users.Include(u => u.UserProperties)
-                .FirstOrDefaultAsync(u => u.Email == userEmail);
-
-    if (user == null)
-    {
-        _logger.LogInformation("Creating new user for email {UserEmail}.", userEmail);
-        user = new User
-        {
-            Email = userEmail,
-            UserProperties = new List<UserProperty>()
-        };
-        _context.Users.Add(user);
-    }
-
-    var property = await _context.Properties.FindAsync(propertyId);
-    if (property == null)
-    {
-        _logger.LogWarning("Property with ID {PropertyId} not found.", propertyId);
-        return NotFound($"Property with ID {propertyId} not found.");
-    }
-
-    var userProperty = user.UserProperties.FirstOrDefault(up => up.PropertyID == propertyId);
-
-    if (isChecked)
-    {
-        if (userProperty == null)
-        {
-            _logger.LogInformation("Adding property ID {PropertyId} to user {UserEmail}'s list.", propertyId, userEmail);
-            var newUserProperty = new UserProperty { Email = userEmail, PropertyID = propertyId };
-            user.UserProperties.Add(newUserProperty);
-            _context.UserProperties.Add(newUserProperty);
-        }
-    }
-    else
-    {
-        if (userProperty != null)
-        {
-            _logger.LogInformation("Removing property ID {PropertyId} from user {UserEmail}'s list.", propertyId, userEmail);
-            user.UserProperties.Remove(userProperty);
-            _context.UserProperties.Remove(userProperty);
-        }
-    }
-
-    await _context.SaveChangesAsync();
-    _logger.LogWarning("User property list updated successfully for user {UserEmail}.", userEmail); //log is not showed???
-    return RedirectToAction("Index");
+    // Correctly await the call to the asynchronous method
+    return await ToggleUserProperty(propertyId, isChecked, redirectToAction, redirectToController);
 }
 
 
