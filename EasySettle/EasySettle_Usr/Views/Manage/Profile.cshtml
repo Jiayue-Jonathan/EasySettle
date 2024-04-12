@@ -1,0 +1,32 @@
+@model UserProfileViewModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="container">
+    <h2>Profile</h2>
+
+    <dl class="row">
+        <dt class="col-sm-2">Email:</dt>
+        <dd class="col-sm-10">@Model.Email</dd>
+
+        <dt class="col-sm-2">Display Name:</dt>
+        <dd class="col-sm-10">@Model.DisplayName</dd>
+        
+        <dt class="col-sm-2">Given Name:</dt>
+        <dd class="col-sm-10">@Model.GivenName</dd>
+        
+        <dt class="col-sm-2">City:</dt>
+        <dd class="col-sm-10">@Model.City</dd>
+        
+        <dt class="col-sm-2">Roles:</dt>
+        <dd class="col-sm-10">@Model.Roles</dd>
+    </dl>
+    
+    <form method="get" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="EditProfile">
+        <button type="submit" class="btn btn-warning m-1">Edit Profile</button>
+    </form>
+    <form method="get" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="resetPassword">
+        <button type="submit" class="btn btn-warning m-1">Reset Password</button>
+    </form>    
+</div>
