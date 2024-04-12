@@ -1,0 +1,45 @@
+@model EasySettle.Models.Property
+
+@{
+    ViewData["Title"] = "Check Photos";
+    int propertyId = (int)ViewData["PropertyID"];
+    var blobUrls = ViewData["BlobUrls"] as List<string>;
+}
+
+<h1>Photos for Property @propertyId</h1>
+
+<div class="photo-gallery">
+    @if (blobUrls != null && blobUrls.Any())
+    {
+        foreach (var url in blobUrls)
+        {
+            <div class="photo-item">
+                <img src="@url" alt="Property Image" style="max-width: 100%; height: auto; padding: 10px;"/>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No photos available for this property.</p>
+    }
+</div>
+
+<style>
+    .photo-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .photo-item {
+        border: 1px solid #ccc;
+        margin: 10px;
+        box-shadow: 0 0 10px #ccc;
+        padding: 10px;
+    }
+
+    .photo-item img {
+        height: 500px; /* Adjust the height as needed */
+        border-radius: 5px;
+    }
+</style>
