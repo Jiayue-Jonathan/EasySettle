@@ -1,0 +1,106 @@
+@model IEnumerable<EasySettle.Models.Property>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PropertyID)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZipCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BathRooms)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.Rent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rented)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Parking)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.Pets)
+            </th>                        
+            <th>
+                @Html.DisplayNameFor(model => model.Owner.OwnerID) <!-- Add the OwnerID header -->
+            </th>
+            <th></th>
+            <th></th>
+            <th></th> <!-- Add a new column header for the Upload button -->
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropertyID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZipCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BathRooms)
+            </td>            
+            <td>
+                @Html.DisplayFor(modelItem => item.Rent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rented)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Parking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pets)
+            </td>                         
+            <td>
+                @Html.DisplayFor(modelItem => item.Owner.OwnerID) <!-- Display the OwnerID -->
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PropertyID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PropertyID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PropertyID">Delete</a>
+            </td>
+            <td>
+                <a asp-action="UploadPhoto" asp-route-id="@item.PropertyID">Upload Photo</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
