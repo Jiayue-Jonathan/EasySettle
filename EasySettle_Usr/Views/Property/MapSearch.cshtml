@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Property Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style>
+        /* Set the size of the div element that contains the map */
+        #map {
+            height: 400px; /* The height is 400 pixels */
+            width: 100%; /* The width is the width of the web page */
+        }
+    </style>
+</head>
+<body>
+    <h1>Property Map</h1>
+
+    <!-- filter -->
+    <div>
+        <label for="city">Select City:</label>
+        <select id="city">
+            <option value="">All</option>
+            <option value="Vancouver">Vancouver</option>
+            <option value="Burnaby">Burnaby</option>
+            <option value="Richmond">Richmond</option>
+            <option value="Surrey">Surrey</option>
+            <option value="Langley">Langley</option>
+            <option value="NorthVancouver">North Vancouver</option>
+            <option value="WestVancouver">West Vancouver</option>
+            <option value="NewWestminster">New Westminster</option>
+            <option value="Delta">Delta</option>
+            <option value="MapleRidge">Maple Ridge</option>
+            <!-- othr city option -->
+        </select>
+        <label for="minRent">Min Rent:</label>
+        <input type="number" id="minRent">
+        <label for="maxRent">Max Rent:</label>
+        <input type="number" id="maxRent">
+        <button onclick="filterProperties()">Filter</button>
+        <button onclick="clearFilters()">Clear</button>
+    </div>
+
+    <div id="map"></div>
+
+    <script>let map;
+        let markers = [];
+        let currentInfoWindow = null;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: { lat: 49.2827, lng: -123.1207 },
+            });
+
+            fetchProperties();
+        }
+
+        function fetchProperties() {
+            fetch('/Property/GetAllProperties')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(properties => {
+                    // Check if properties contain error message
+                    if (properties && properties.error) {
+                        // Display alert with error message
+                        alert(properties.error);
+                    } else {
+                        properties.forEach(property => {
+                            addMarker(property);
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching properties:', error);
+
+                    // Display error message to user
+                    alert("An error occurred: " + error.message);
+                });
+        }
+
+        function addMarker(property) {
+            const address = `${property.street}, ${property.city}, ${property.zipCode}`;
+            const geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'address': address }, function (results, status) {
+                if (status === 'OK') {
+                    const location = results[0].geometry.location;
+                    const marker = new google.maps.Marker({
+                        position: location,
+                        map,
+                        title: property.street,
+                    });
+                    markers.push(marker);
+                    const contentString =
+                        `<div id="content">
+                                        <div id="siteNotice"></div>
+                                        <h1 id="firstHeading" class="firstHeading">${property.street}</h1>
+                                        <p>City: ${getCityNameFromIndex(property.city)}</p>
+                                        <p>Type: ${property.type === 'Apartment' ? 'Apartment' : 'House'}</p>
+                                        <p>Rooms: ${property.rooms}</p>
+                                        <p>BathRooms: ${property.bathRooms}</p>
+                                        <p>Rent: ${property.rent}</p>
+                                        <button onclick="openDetailsInNewWindow(${property.propertyID})">Details</button>
+
+                                        <!-- Add more property details as needed -->
+                                    </div>`;
+                    const infowindow = new google.maps.InfoWindow({
+                        content: contentString,
+                        ariaLabel: property.street,
+                    });
+                    marker.addListener("click", () => {
+                        if (currentInfoWindow) {
+                            currentInfoWindow.close();
+                        }
+                        infowindow.open(map, marker);
+                        currentInfoWindow = infowindow;
+                    });
+                } else {
+                    console.error('Geocode was not successful for the following reason:', status);
+                }
+            });
+        }
+
+        function filterProperties() {
+            const city = document.getElementById('city').value;
+            const minRent = document.getElementById('minRent').value;
+            const maxRent = document.getElementById('maxRent').value;
+
+            let url = `/Property/GetAllProperties?city=${city}`;
+            if (minRent !== '') {
+                url += `&minRent=${minRent}`;
+            }
+            if (maxRent !== '') {
+                url += `&maxRent=${maxRent}`;
+            }
+
+            fetch(url)
+                .then(response => response.json())
+                .then(properties => {
+                    // clear marker
+                    markers.forEach(marker => marker.setMap(null));
+                    markers = [];
+
+                    properties.forEach(property => {
+                        addMarker(property);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching properties:', error);
+                });
+        }
+
+        function clearFilters() {
+            document.getElementById('city').value = '';
+            document.getElementById('minRent').value = '';
+            document.getElementById('maxRent').value = '';
+            fetchProperties();
+        }
+        function openDetailsInNewWindow(propertyId) {
+            window.open(`/Property/Details/${propertyId}`, '_blank');
+        }
+        window.initMap = initMap;</script>
+
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZ1VFUiJ586zyA1iE-6vCBXJvluk_xusQ&callback=initMap"></script>
+    <!-- Google Maps API key -->
+    <script>function getCityNameFromIndex(index) {
+            const cities = [
+                'Vancouver',
+                'Burnaby',
+                'Richmond',
+                'Surrey',
+                'Langley',
+                'Coquitlam',
+                'North Vancouver',
+                'West Vancouver',
+                'New Westminster',
+                'Delta',
+                'Maple Ridge'
+
+            ];
+            if (index >= 0 && index < cities.length) {
+                return cities[index];
+            } else {
+                console.error('Invalid city index:', index);
+                return '';
+            }
+        }</script>
+
+
+</body>
+</html>
