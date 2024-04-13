@@ -8,13 +8,15 @@
 
 <h1>Photos for Property @propertyId</h1>
 
-<div class="photo-gallery">
+<div class="row">
     @if (blobUrls != null && blobUrls.Any())
     {
         foreach (var url in blobUrls)
         {
-            <div class="photo-item">
-                <img src="@url" alt="Property Image" style="max-width: 100%; height: auto; padding: 10px;"/>
+            <div class="col-md-4 col-sm-6">
+                <div class="photo-item mb-3">
+                    <img src="@url" alt="Property Image" class="img-max-size"/>
+                </div>
             </div>
         }
     }
@@ -25,21 +27,16 @@
 </div>
 
 <style>
-    .photo-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+    .img-max-size {
+        width: 100%; /* Take full width of the column */
+        height: auto; /* Maintain the aspect ratio */
+        min-width: 350px; /* Minimum width to ensure visibility on smaller screens */
+        object-fit: scale-down; /* Scale down if necessary but never up beyond the original size */
     }
-
     .photo-item {
-        border: 1px solid #ccc;
-        margin: 10px;
-        box-shadow: 0 0 10px #ccc;
-        padding: 10px;
-    }
+        padding: 5px; /* Padding to prevent images from sticking to each other */
+        align-items: center; /* Center the image vertically */
+        justify-content: center; /* Center the image horizontally */
 
-    .photo-item img {
-        height: 500px; /* Adjust the height as needed */
-        border-radius: 5px;
     }
 </style>
