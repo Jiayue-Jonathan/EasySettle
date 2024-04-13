@@ -1,0 +1,135 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = EasySettle
+build_property.RootNamespace = EasySettle
+build_property.ProjectDir = /Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Client/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2xpZW50L0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Client/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2xpZW50L0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Client/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2xpZW50L0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Client/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2xpZW50L0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Client/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2xpZW50L0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Lease/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGVhc2UvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Lease/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGVhc2UvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Lease/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGVhc2UvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Lease/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGVhc2UvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Lease/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGVhc2UvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Owner/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3duZXIvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Owner/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3duZXIvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Owner/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3duZXIvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Owner/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3duZXIvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Owner/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3duZXIvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Property/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHkvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Property/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHkvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Property/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHkvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Property/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHkvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Property/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHkvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Property/UploadPhoto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHkvVXBsb2FkUGhvdG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jiayue/Documents/FDU/Capstone/EasySettleNew_Admin/EasySettle_admin/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-1koxwend1g
