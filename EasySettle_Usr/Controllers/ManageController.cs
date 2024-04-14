@@ -25,25 +25,38 @@ public class ManageController : BaseController
         {       
         }
     
-    public async Task<IActionResult> GetYourProperties()
+public async Task<IActionResult> GetYourProperties()
+{
+    var userEmail = User.Claims.FirstOrDefault(c => c.Type == "emails")?.Value;
+    if (string.IsNullOrEmpty(userEmail))
     {
-        var userEmail = User.Claims.FirstOrDefault(c => c.Type == "emails")?.Value;
-        if (string.IsNullOrEmpty(userEmail))
-        {
-            return Unauthorized("User is not authenticated.");
-        }
-
-        var owner = await _context.Owners
-                                .Include(o => o.Properties)
-                                .FirstOrDefaultAsync(o => o.Email == userEmail);
-
-        if (owner == null || owner.Properties == null || !owner.Properties.Any())
-        {
-            return NotFound("No properties found for this user.");
-        }
-
-        return View(owner.Properties.ToList());
+        return Unauthorized("User is not authenticated.");
     }
+
+    var owner = await _context.Owners
+                              .Include(o => o.Properties)
+                              .FirstOrDefaultAsync(o => o.Email == userEmail);
+
+    if (owner == null)
+    {
+        int maxOwnerId = _context.Owners.Any() ? _context.Owners.Max(o => o.OwnerID) + 1 : 20000; // Start IDs from 10001 if none exist
+
+        owner = new Owner 
+        { 
+            Email = userEmail,
+            OwnerID = maxOwnerId  
+        };
+        _context.Owners.Add(owner);
+        await _context.SaveChangesAsync(); 
+    }
+
+    if (owner.Properties == null || !owner.Properties.Any())
+    {
+        TempData["Message"] = "You do not have any properties listed. Consider adding new properties.";
+    }
+
+    return View(owner.Properties.ToList());
+}
 
 
     // GET: Property/Create
