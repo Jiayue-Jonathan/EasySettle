@@ -68,9 +68,7 @@ public async Task<IActionResult> GetYourProperties()
             return Unauthorized("Invalid user data.");
         }
 
-        var isLandlord = User.Claims.Any(c => c.Type == "extension_Roles" 
-                                            && c.Value == "Landlord");
-        if (!isLandlord)
+        if (!UserIsLandlord())
         {
             return Unauthorized("Access is restricted to landlords only.");
         }
@@ -98,10 +96,9 @@ public async Task<IActionResult> GetYourProperties()
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> PostYourProperty(PropertyAndOwnerViewModel viewModel)
     {
-        var isLandlord = User.Claims.Any(c => c.Type == "extension_Roles" && c.Value == "Landlord");
-        if (!isLandlord)
+        if (!UserIsLandlord())
         {
-            return Unauthorized();
+            return Unauthorized("Access is restricted to landlords only.");
         }
 
         if (ModelState.IsValid)
@@ -176,6 +173,23 @@ public async Task<IActionResult> GetYourProperties()
         // Correctly await the call to the asynchronous method
         return await ToggleUserProperty(propertyId, isChecked, redirectToAction, redirectToController);
     }    
+    private bool UserIsLandlord()
+    {
+        var roles = User.Claims.Where(c => c.Type == "extension_Roles")
+                            .Select(c => c.Value).ToList();
+        
+        var rolesString = string.Join(", ", roles);
+        var isLandlord = rolesString.Contains("Landlord");
+
+        if (!isLandlord)
+        {
+            // Optionally, log the attempt or handle other business logic
+            _logger.LogInformation($"Access denied. User roles: {rolesString}");
+        }
+
+        return isLandlord;
+    }
+
 
 }
 
