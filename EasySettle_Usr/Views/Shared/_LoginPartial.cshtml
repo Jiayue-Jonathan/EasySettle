@@ -16,7 +16,7 @@
         @if (!string.IsNullOrEmpty(options.EditProfilePolicyId))
         {
             <li class="nav-item me-3">
-                <a class="btn btn-outline-warning " asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="">Hello @User.Identity?.Name!</a>
+                <span class="btn btn-outline-warning ">Hello @User.Identity?.Name!</span>
             </li>
         }
         else

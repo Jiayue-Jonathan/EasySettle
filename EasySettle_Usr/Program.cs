@@ -19,6 +19,11 @@ using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configure logging
+builder.Logging.ClearProviders(); // Clears all previously configured providers
+builder.Logging.AddConsole();     // Adds console logging
+builder.Logging.AddDebug();       // Adds debug logging
+
 // Encapsulate service configuration
 ConfigureServices(builder.Services, builder.Configuration, builder.Environment);
 

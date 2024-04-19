@@ -113,11 +113,13 @@
             padding: 5px; /* Add some padding around the text */
         }
         .carousel-item img {
-            width: 300px; /* Fixed width */
-            height: 200px; /* Fixed height */
-            object-fit: cover; /* Cover ensures that aspect ratios are maintained while filling the container */
+            width: 100%; /* Adjusts width to 100% of the container */
+            height: auto; /* Height is automatically adjusted to maintain the aspect ratio */
+            object-fit: cover; /* Ensures that the image covers the element's box */
             object-position: center; /* Center the image within the container */
-        }   
+            aspect-ratio: 3 / 2; /* Maintain a fixed 3:2 aspect ratio */
+        }
+  
         /* Override the background color of checked checkboxes */
         .form-check-input:checked {
             background-color: #ffc107 !important;
